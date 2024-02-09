@@ -144,35 +144,31 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="addToCartModalLabel">Add to cart</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        
+            
                     </button>
                 </div>
                 <div class="modal-body">
+                <p>Product Name: Coconut Seedlings</p>
+                            <p>Price: 10.00</p>
+                            <img src="${product.image_url}" alt="" width="450" height="200" />
+                            
+              
                     <!-- Content to show in modal body -->
                 
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Order List</button>
+                <div class="quantity-selector">
+                 <label for="quantity-product1">Quantity:</label>
+                <input type="number" id="quantity-product1" name="quantity-product1" value="1" min="1">
+                </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
                     <div class="d-flex align-items-end">
-    <div class="position-relative me-4 my-auto">
-        <i class="fa fa-shopping-bag fa-2x" data-toggle="collapse" href="#cartListCollapse" role="button" aria-expanded="false" aria-controls="cartListCollapse"></i>
-        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-    </div>
-
-    <div class="collapse" id="cartListCollapse">
-        <div class="card card-body">
-            <h5>Cart List</h5>
-            <ul id="cartItemList" class="list-group">
-                <!-- Cart items will be dynamically added here -->
-            </ul>
-            <div class="text-end mt-3">
-                <button type="button" class="btn btn-secondary" data-toggle="collapse" href="#cartListCollapse" aria-expanded="false" aria-controls="cartListCollapse">Close</button>
-                <button type="button" class="btn btn-primary">Checkout</button>
-            </div>
-        </div>
     </div>
 </div>
+
+
+
 
 <script>
     // Sample data for cart items (replace with actual data)
@@ -260,6 +256,7 @@
                             <p>Price: ${product.price}</p>
                             <img src="${product.image_url}" alt="Product Image" width="150" height="180" />
                             <button class="product-button" data-toggle="modal" data-target="#addToCartModal">Add to Cart</button>
+                            <button class="product-button" data-toggle="modal" data-target="#buyNowModal">Buy Now</button>
                         `;
                         container.appendChild(productDiv);
                     });

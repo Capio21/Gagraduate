@@ -49,3 +49,5 @@ $routes->get('/members/create', 'Members::create');
 $routes->post('/members/store', 'Members::store');
 $routes->get('/members/edit/(:num)', 'Members::edit/$1');
 $routes->post('/members/update/(:num)', 'Members::update/$1');
+
+$routes->get('/addcart', 'Cart::index');
