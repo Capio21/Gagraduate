@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
 use App\Models\UserModel;
-
+use App\Models\MemberModel;
 class HomeController extends BaseController
 {
 
@@ -27,4 +27,5 @@ class HomeController extends BaseController
         $products = $productModel->where('category_id', $categoryId)->findAll();
         return json_encode($products);
     }
+    
 }

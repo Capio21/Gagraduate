@@ -10,6 +10,9 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/user', 'HomeController::index');
 
+
+
+
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth');
 
 $routes->get('/shop', function () {
@@ -30,3 +33,16 @@ $routes->get('/register', '\App\Controllers\UserController::register');
 $routes->post('/user/store', '\App\Controllers\UserController::store');
 $routes->get('/', '\App\Controllers\SigninController::login');
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth', ['filter' => 'authGuard']);
+
+
+$routes->get('/admin', 'AdminController::admin');
+
+
+
+//members registration list
+
+$routes->get('/members', 'Members::index');
+$routes->get('/members/create', 'Members::create');
+$routes->post('/members/store', 'Members::store');
+$routes->get('/members/edit/(:num)', 'Members::edit/$1');
+$routes->post('/members/update/(:num)', 'Members::update/$1');

@@ -29,7 +29,7 @@ class AdminController extends BaseController
       // Check if the file is valid
       if ($imageFile->isValid() && !$imageFile->hasMoved()) {
           // Define the upload directory
-          $uploadPath = 'C:\laragon\www\rence_3f3_lab3\public\uploads'; // Update this to your local path
+          $uploadPath = 'C:\laragon\www\Gagraduate\public\uploads'; // Update this to your local path
 
           // Move the uploaded file to the upload directory without changing the filename
           $imageFile->move($uploadPath);
@@ -120,7 +120,7 @@ public function update($product_id)
         $imageFile = $this->request->getFile('image_url');
         if ($imageFile->isValid() && !$imageFile->hasMoved()) {
             // If a new image is uploaded, move it and update the image URL
-            $uploadPath = 'C:\laragon\www\rence_3f3_lab3\public\uploads'; // Update this to your local path
+            $uploadPath = 'C:\laragon\www\Gagraduate\public\uploads'; // Update this to your local path
             $imageFile->move($uploadPath);
             $newData['image_url'] = 'uploads/' . $imageFile->getName();
         }
@@ -152,6 +152,10 @@ public function updateForm($product_id)
     } else {
         return redirect()->to('/insert')->with('error', 'Product not found');
     }
+}
+public function admin(): string
+{
+    return view('admin');
 }
 
 
