@@ -137,36 +137,55 @@
             </div>
         </div>
         <!-- Navbar End -->
-        
         <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addToCartModalLabel">Add to cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            
-                    </button>
-                </div>
-                <div class="modal-body">
-                <p>Product Name: Coconut Seedlings</p>
-                            <p>Price: 10.00</p>
-                            <img src="${product.image_url}" alt="" width="450" height="200" />
-                            
-              
-                    <!-- Content to show in modal body -->
-                
-                    
-                </div>
-                <div class="modal-footer">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addToCartModalLabel">Add to cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Product Name: <span id="addToCartModalProductName"></span></p>
+                <p>Price: <span id="addToCartModalPrice"></span></p>
+                <img src="" id="addToCartModalImage" alt="" width="450" height="200" />
+            </div>
+            <div class="modal-footer">
                 <div class="quantity-selector">
-                 <label for="quantity-product1">Quantity:</label>
-                <input type="number" id="quantity-product1" name="quantity-product1" value="1" min="1">
+                    <label for="quantity-product1">Quantity:</label>
+                    <input type="number" id="quantity-product1" name="quantity-product1" value="1" min="1">
                 </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
-                    <div class="d-flex align-items-end">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
+                <div class="d-flex align-items-end"></div>
+            </div>
+        </div>
     </div>
 </div>
-
+<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyModalLabel">Buy Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Product Name: <span id="buyModalProductName"></span></p>
+                <p>Price: <span id="buyModalPrice"></span></p>
+                <img src="" id="buyModalImage" alt="" width="450" height="200" />
+            </div>
+            <div class="modal-footer">
+                <div class="quantity-selector">
+                    <label for="quantity-product2">Quantity:</label>
+                    <input type="number" id="quantity-product2" name="quantity-product2" value="1" min="1">
+                </div>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -243,29 +262,42 @@
         });
 
         function loadAndDisplayCategory(categoryId, container) {
-            // Use AJAX to fetch records based on categoryId and update the container
-            fetch(`/get-products-by-category/${categoryId}`)
-                .then(response => response.json())
-                .then(products => {
-                    // Loop through the products and add them to the list
-                    products.forEach(product => {
-                        const productDiv = document.createElement('div');
-                        productDiv.classList.add('product-list-item');
-                        productDiv.innerHTML = `
-                            <p>Product Name: ${product.product_name}</p>
-                            <p>Price: ${product.price}</p>
-                            <img src="${product.image_url}" alt="Product Image" width="150" height="180" />
-                            <button class="product-button" data-toggle="modal" data-target="#addToCartModal">Add to Cart</button>
-                            <button class="product-button" data-toggle="modal" data-target="#buyNowModal">Buy Now</button>
-                        `;
-                        container.appendChild(productDiv);
-                    });
-                })
-                .catch(error => {
-                    console.error(error);
-                    container.innerHTML = 'Failed to load products.';
-                });
-        }
+    // Use AJAX to fetch records based on categoryId and update the container
+    fetch(`/get-products-by-category/${categoryId}`)
+        .then(response => response.json())
+        .then(products => {
+            // Loop through the products and add them to the list
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-list-item');
+                productDiv.innerHTML = `
+                    <p>Product Name: ${product.product_name}</p>
+                    <p>Price: ${product.price}</p>
+                    <img src="${product.image_url}" alt="Product Image" width="150" height="180" />
+                    <button class="product-button" data-toggle="modal" data-target="#addToCartModal" onclick="openModal('${product.product_name}', '${product.price}', '${product.image_url}')">Add to Cart</button>
+                    <button class="product-button" data-toggle="modal" data-target="#buyModal" onclick="openBuyModal('${product.product_name}', '${product.price}', '${product.image_url}')">Buy Now</button>
+                `;
+                container.appendChild(productDiv);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+            container.innerHTML = 'Failed to load products.';
+        });
+}
+
+function openModal(productName, price, imageUrl) {
+    document.getElementById('addToCartModalProductName',).innerText = productName;
+    document.getElementById('addToCartModalPrice').innerText = price;
+    document.getElementById('addToCartModalImage').src = imageUrl;
+}
+
+function openBuyModal(productName, price, imageUrl) {
+    document.getElementById('buyModalProductName').innerText = productName;
+    document.getElementById('buyModalPrice').innerText = price;
+    document.getElementById('buyModalImage').src = imageUrl;
+}
+
 
 
         

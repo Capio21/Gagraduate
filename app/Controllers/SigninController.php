@@ -37,7 +37,7 @@ class SigninController extends BaseController
                 'isLoggedin' => true
             ];
             $session->set($ses_data);
-            return redirect()->to('/insert');
+            return redirect()->to('/admin');
         } else if (password_verify($password, $hashedPassword)) {
             // Redirect regular users to /user
             $ses_data = [

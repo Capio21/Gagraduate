@@ -98,6 +98,10 @@
                 </ul>
 
                 <h2>Member List</h2>
+<a href="/members/create" class="btn btn-primary">Add Member</a>
+
+                <br>
+                <br>
 
                 <table class="table table-bordered">
                     <thead class="thead-dark">

@@ -101,71 +101,76 @@
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
                 </ul>
                 <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                        <body>
-    <div class="container">
-        <h2>Insert into Products Table</h2>
-        <form action="/insert" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="product_name">Product Name:</label>
-                <input type="text" class="form-control" id="product_name" name="product_name" required>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Insert into Products Table</h2>
+                    <form action="/insert" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="product_name" class="form-label">Product Name:</label>
+                            <input type="text" class="form-control" id="product_name" name="product_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price:</label>
+                            <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category_id" class="form-label">Category:</label>
+                            <select class="form-select" id="category_id" name="category_id" required>
+                                <?php foreach ($categories as $category): ?>
+                                    <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image_url" class="form-label">Image:</label>
+                            <input type="file" class="form-control" id="image_url" name="image_url" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Insert</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="price">Price:</label>
-                <input type="number" step="0.01" class="form-control" id="price" name="price" required>
-            </div>
-            <div class="form-group">
-                <label for="category_id">Category:</label>
-                <select class="form-control" id="category_id" name="category_id" required>
-                    <?php foreach ($categories as $category): ?>
-                        <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="image_url">Image:</label>
-                <input type="file" class="form-control-file" id="image_url" name="image_url" accept="image/*" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Insert</button>
-
-        </form>
+        </div>
     </div>
+</div>
 
-    
-        <h2>Products Table</h2>
+
+    <br>
+
+        <h2 style = text-align:center;>Products List</h2>
         <br>
         <table class="table table-striped table-bordered compact-table">
-            <!-- Table header outside the scrollable container -->
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-        </table>
+    <!-- Table header outside the scrollable container -->
+    <thead class="thead-dark">
+        
+    </thead>
+    <tbody>
+        <!-- Table content goes here -->
+    </tbody>
+</table>
+
         <!-- Wrap the table body in a div with scrollbar -->
-        <div class="table-container">
-            <table class="table table-striped table-bordered compact-table">
-                <tbody>
-                    <?php foreach ($products as $product): ?>
-                        <tr data-product-id="<?= $product['id'] ?>">
-                            <td><?= $product['product_name'] ?></td>
-                            <td><?= $product['price'] ?></td>
-                            <td><?= $product['category_id'] ?></td>
-                            <td><img src="<?= base_url() . '/' . $product['image_url'] ?>" alt="Product Image" width="50"></td>
-                            <td>
-                                <button class="btn btn-danger" onclick="deleteProduct(<?= $product['id'] ?>)">Delete</button>
-                                <a class="btn btn-warning" href="/update/<?= $product['id'] ?>">Update</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+        <div class="row">
+    <?php foreach ($products as $product): ?>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="<?= base_url() . '/' . $product['image_url'] ?>" class="card-img-top" alt="Product Image" style="max-height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $product['product_name'] ?></h5>
+                    <p class="card-text">Price: <?= $product['price'] ?></p>
+                    <p class="card-text">Category: <?= $product['category_id'] ?></p>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-danger" onclick="deleteProduct(<?= $product['id'] ?>)">Delete</button>
+                        <a href="/update/<?= $product['id'] ?>" class="btn btn-warning">Update</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    <?php endforeach; ?>
+</div>
+
+
     </div>
 
     <!-- JavaScript for deleting products -->
