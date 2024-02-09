@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -125,20 +126,85 @@
                         </div>
                         <div class="d-flex m-3 me-0">
                             <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
+                            
                             <a href="#" class="my-auto">
                                 <i class="fas fa-user fa-2x"></i>
                             </a>
                         </div>
+                        
                     </div>
                 </nav>
             </div>
         </div>
         <!-- Navbar End -->
+        
+        <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addToCartModalLabel">Add to cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content to show in modal body -->
+                
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Order List</button>
+                    <div class="d-flex align-items-end">
+    <div class="position-relative me-4 my-auto">
+        <i class="fa fa-shopping-bag fa-2x" data-toggle="collapse" href="#cartListCollapse" role="button" aria-expanded="false" aria-controls="cartListCollapse"></i>
+        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+    </div>
 
+    <div class="collapse" id="cartListCollapse">
+        <div class="card card-body">
+            <h5>Cart List</h5>
+            <ul id="cartItemList" class="list-group">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="text-end mt-3">
+                <button type="button" class="btn btn-secondary" data-toggle="collapse" href="#cartListCollapse" aria-expanded="false" aria-controls="cartListCollapse">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Sample data for cart items (replace with actual data)
+    const cartItems = [
+        { id: 1, name: "Product 1", quantity: 2 },
+        { id: 2, name: "Product 2", quantity: 1 },
+        { id: 3, name: "Product 3", quantity: 3 }
+    ];
+
+    // Function to populate cart list inside the collapsible div
+    function populateCartList() {
+        const cartItemList = document.getElementById('cartItemList');
+        cartItemList.innerHTML = ''; // Clear existing items
+
+        // Loop through cart items and create list items
+        cartItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.textContent = `${item.name} - Quantity: ${item.quantity}`;
+            cartItemList.appendChild(listItem);
+        });
+    }
+
+    // Event listener to populate cart list when the bag icon is clicked
+    document.querySelector('.fa-shopping-bag').addEventListener('click', populateCartList);
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
         <br>
         <br>
         <br>
@@ -193,7 +259,7 @@
                             <p>Product Name: ${product.product_name}</p>
                             <p>Price: ${product.price}</p>
                             <img src="${product.image_url}" alt="Product Image" width="150" height="180" />
-                            <button class="product-button">Add to Cart</button>
+                            <button class="product-button" data-toggle="modal" data-target="#addToCartModal">Add to Cart</button>
                         `;
                         container.appendChild(productDiv);
                     });
@@ -203,7 +269,13 @@
                     container.innerHTML = 'Failed to load products.';
                 });
         }
+
+
+        
+        
     </script>
+
+    
 
         <!-- Modal Search Start -->
         <
@@ -217,6 +289,9 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

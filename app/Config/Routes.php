@@ -38,6 +38,9 @@ $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth
 $routes->get('/admin', 'AdminController::admin');
 
 
+//add to cart
+
+// Define a route for adding products to the cart
 
 //members registration list
 
