@@ -28,7 +28,9 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
-    
+    <style>
+        
+    </style>
 
     <body>
 
@@ -110,8 +112,8 @@
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-12 col-lg-7">
-                        <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                        <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                        <h4 class="mb-3 text-secondary">Mulawin Coconut Farmers Coop.</h4>
+                        <h1 class="mb-5 display-3 text-primary">Workshop and Products</h1>
                       
                     </div>
                     <div class="col-md-12 col-lg-5">

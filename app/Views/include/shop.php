@@ -301,23 +301,15 @@
                 <h2>Shopping Bill</h2>
                 <table>
                     <tbody>
-                        <tr>
-                            <td>Shipping fee</td>
-                            <td align="right">$5.43</td>
-                        </tr>
-                        <tr>
-                            <td>Discount 10%</td>
-                            <td align="right">-$1.89</td>
-                        </tr>
+                    <div class="modal-body">
                          <tr>
-                             <td>Price Total</td>
-                             <td align="right">$84.82</td>
+                         <p>Product Name: <span id="buyModalProductName"></span></p>
+                         <p>Price: <span id="buyModalPrice"></span></p>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td>Total</td>
-                            <td align="right">$88.36</td>
+                        <p>Total Price: 150.00<span id="buyModalTotalPrice"></span></p>  
                         </tr>
                     </tfoot>
                 </table>

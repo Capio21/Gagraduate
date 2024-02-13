@@ -8,11 +8,13 @@
 
     <style>
         body {
-            background-color: #f5f5f5;
+            background-image: url('COC.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70vh;
+            height: 100vh; /* Changed to 100vh for full viewport height */
         }
 
         h2 {

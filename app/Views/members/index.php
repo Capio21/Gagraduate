@@ -12,6 +12,7 @@
             padding-top: 80px;
             
         }
+        
 
         #sidebar {
             position: fixed;
