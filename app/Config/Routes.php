@@ -30,6 +30,7 @@ $routes->post('/update/(:num)', 'AdminController::update/$1');
 $routes->get('/get-products-by-category/(:num)', 'HomeController::getProductsByCategory/$1');
 
 $routes->get('/register', '\App\Controllers\UserController::register');
+$routes->get('/admin_register', '\App\Controllers\UserController::admin_register');
 $routes->post('/user/store', '\App\Controllers\UserController::store');
 $routes->get('/', '\App\Controllers\SigninController::login');
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth', ['filter' => 'authGuard']);
@@ -45,10 +46,7 @@ $routes->get('/admin', 'AdminController::admin');
 //members registration list
 
 $routes->get('/members', 'Members::index');
-$routes->get('/members/create', 'Members::create');
-$routes->post('/members/store', 'Members::store');
-$routes->get('/members/edit/(:num)', 'Members::edit/$1');
-$routes->post('/members/update/(:num)', 'Members::update/$1');
+
 
 $routes->get('/addcart', 'Cart::index');
 

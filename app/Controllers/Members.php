@@ -2,13 +2,14 @@
 
 namespace App\Controllers;
 use App\Models\MemberModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 class Members extends BaseController
 {
     public function index()
     {
-        $model = new MemberModel();
+        $model = new UserModel();
         $data['members'] = $model->findAll();
 
         return view('members/index', $data);

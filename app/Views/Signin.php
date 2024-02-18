@@ -8,8 +8,7 @@
 
     <style>
         body {
-            background-image: url('COC.jpg');
-            background-size: cover;
+           
             background-position: center;
             display: flex;
             justify-content: center;

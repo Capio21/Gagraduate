@@ -35,6 +35,7 @@ class SigninController extends BaseController
                 'id' => $data['id'],
                 'username' => $data['username'],
                 'isLoggedin' => true
+
             ];
             $session->set($ses_data);
             return redirect()->to('/admin');

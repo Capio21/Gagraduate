@@ -77,13 +77,13 @@
                 <ul class="nav flex-column side-bar">
                     <li class="nav-item side-bar tmargin"><a class="nav-link" href="/admin"><i
                                 class="bi bi-house"></i>&nbsp;Dashboard</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="/member"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="/members "><i
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="#"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="register"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="#"><i
                                 class="bi bi-gear"></i>&nbsp;Settings</a></li>
@@ -98,8 +98,7 @@
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
                 </ul>
 
-                <h2>Member List</h2>
-<a href="/members/create" class="btn btn-primary">Add Member</a>
+              
 
                 <br>
                 <br>
@@ -109,7 +108,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
-                            <th>Email</th>
                             <th>Full Name</th>
                             <th>Address</th>
                             <th>Contact Number</th>
@@ -118,7 +116,7 @@
                             <th>Occupation</th>
                             <th>Membership Type</th>
                             <th>Date Joined</th>
-                            <th>Actions</th>
+                            
                         </tr>
                     </thead>
                     <!-- Assuming $members is an array of arrays -->
@@ -126,7 +124,6 @@
                     <tr>
                         <td><?= $member['id'] ?></td>
                         <td><?= $member['username'] ?></td>
-                        <td><?= $member['email'] ?></td>
                         <td><?= $member['full_name'] ?></td>
                         <td><?= $member['address'] ?></td>
                         <td><?= $member['contact_number'] ?></td>
@@ -136,7 +133,7 @@
                         <td><?= $member['membership_type'] ?></td>
                         <td><?= $member['date_joined'] ?></td>
                         <!-- Add other fields as needed -->
-                        <td><a href="/members/edit/<?= $member['id'] ?>" class="btn btn-primary btn-sm">Edit</a></td>
+                        
                     </tr>
                     <?php endforeach; ?>
                 </table>
