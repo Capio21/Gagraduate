@@ -1,0 +1,109 @@
+CRITICAL - 2024-02-13 16:59:56 --> CodeIgniter\Router\RouteCollection::{closure}(): Argument #1 ($routes) must be of type CodeIgniter\Routing\RouteGroup, CodeIgniter\Router\RouteCollection given, called in C:\laragon\www\Gagraduate\system\Router\RouteCollection.php on line 772
+in APPPATH\Config\Routes.php on line 61.
+ 1 SYSTEMPATH\Router\RouteCollection.php(772): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(79): CodeIgniter\Router\RouteCollection->group('events', [...], Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\Gagraduate\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:00:11 --> CodeIgniter\Router\RouteCollection::{closure}(): Argument #1 ($routes) must be of type CodeIgniter\Routing\RouteGroup, CodeIgniter\Router\RouteCollection given, called in C:\laragon\www\Gagraduate\system\Router\RouteCollection.php on line 772
+in APPPATH\Config\Routes.php on line 61.
+ 1 SYSTEMPATH\Router\RouteCollection.php(772): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(79): CodeIgniter\Router\RouteCollection->group('events', [...], Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\Gagraduate\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:14:47 --> Cannot use CodeIgniter\Router\RouteCollection as RouteCollection because the name is already in use
+in APPPATH\Config\Routes.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-02-13 17:15:07 --> Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in C:\laragon\www\Gagraduate\app\Config\Routes.php on line 59 and exactly 3 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 285.
+ 1 APPPATH\Config\Routes.php(59): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\Gagraduate\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:15:23 --> Too few arguments to function CodeIgniter\Router\RouteCollection::__construct(), 0 passed in C:\laragon\www\Gagraduate\app\Config\Routes.php on line 58 and exactly 3 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 285.
+ 1 APPPATH\Config\Routes.php(58): CodeIgniter\Router\RouteCollection->__construct()
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\Gagraduate\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:25:13 --> Undefined variable $events
+in APPPATH\Views\events\index.php on line 21.
+ 1 APPPATH\Views\events\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $events', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('events/index', [], true)
+ 5 APPPATH\Controllers\Event.php(15): view('events/index')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:25:44 --> Invalid file: "index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('index', [], true)
+ 3 APPPATH\Controllers\Event.php(15): view('index')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:26:06 --> Undefined variable $events
+in APPPATH\Views\events\index.php on line 21.
+ 1 APPPATH\Views\events\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $events', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('events/index', [], true)
+ 5 APPPATH\Controllers\Event.php(15): view('events/index')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:26:16 --> Undefined variable $events
+in APPPATH\Views\events\index.php on line 21.
+ 1 APPPATH\Views\events\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $events', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('events/index', [], true)
+ 5 APPPATH\Controllers\Event.php(15): view('events/index')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:33:33 --> Invalid file: "event/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('event/index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('event/index', [], true)
+ 3 APPPATH\Controllers\Event.php(15): view('event/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-13 17:50:23 --> Undefined variable $events
+in APPPATH\Views\events\create.php on line 153.
+ 1 APPPATH\Views\events\create.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $events', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\create.php', 153)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\events\\create.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('events/create', [], true)
+ 5 APPPATH\Controllers\Event.php(20): view('events/create')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Event->create()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Event))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')

@@ -51,3 +51,15 @@ $routes->get('/members/edit/(:num)', 'Members::edit/$1');
 $routes->post('/members/update/(:num)', 'Members::update/$1');
 
 $routes->get('/addcart', 'Cart::index');
+
+
+
+// app/Config/Routes.php
+
+
+$routes->get('event', 'Event::index');
+$routes->get('events/create', 'Event::create');
+$routes->post('events/store', 'Event::store');
+$routes->get('events/edit/(:num)', 'Event::edit/$1');
+$routes->post('events/update/(:num)', 'Event::update/$1');
+$routes->get('events/delete/(:num)', 'Event::delete/$1');

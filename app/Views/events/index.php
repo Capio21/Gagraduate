@@ -29,7 +29,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <style>
-        
+         
     </style>
 
     <body>
@@ -79,12 +79,49 @@
                             <a href="#" class="my-auto">
                                 <i class="fas fa-user fa-2x"></i>
                             </a>
+
+
+                            
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
         <!-- Navbar End -->
+
+<br>
+<br>
+
+        <body>
+        <div class="container mt-5">
+        <h1 class="mb-4">Events</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($events as $event) : ?>
+                    <tr>
+                        <td><?= $event['title'] ?></td>
+                        <td><?= $event['description'] ?></td>
+                        <td><?= $event['time'] ?></td>
+                        <td><?= $event['location'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</body>
+
+
+        
 
 
         <!-- Modal Search Start -->
@@ -105,25 +142,10 @@
             </div>
         </div>
         <!-- Modal Search End -->
+        
 
 
-        <!-- Hero Start -->
-        <div class="container-fluid py-5 mb-5 hero-header">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-md-12 col-lg-7">
-                        <h4 class="mb-3 text-secondary">Mulawin Coconut Farmers Coop.</h4>
-                        <h1 class="mb-5 display-3 text-primary">Workshop and Products</h1>
-                      
-                    </div>
-                    <div class="col-md-12 col-lg-5">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-VTFszV2uCQ" frameborder="0" allowfullscreen></iframe>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         <!-- Hero End -->
 
 

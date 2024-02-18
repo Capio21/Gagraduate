@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +90,7 @@
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="/events"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
@@ -111,7 +112,37 @@
                 <div class="container mt-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                          
+                        
+    <div class="container mt-5">
+        <h1>Create Event</h1>
+        <form action="/events/store" method="post">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="datetime-local" class="form-control" id="time" name="time">
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" id="location" name="location">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+            
+        </form>
+
+    </div>
+<br>
+<br>
+
                     </div>
                 </div>
             </main>
