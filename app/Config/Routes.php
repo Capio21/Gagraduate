@@ -48,7 +48,7 @@ $routes->get('/admin', 'AdminController::admin');
 $routes->get('/members', 'Members::index');
 
 
-$routes->get('/addcart', 'Cart::index');
+$routes->get('/shop', 'CartController::cart');
 
 
 

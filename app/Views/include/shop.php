@@ -232,11 +232,14 @@
                 <img src="" id="addToCartModalImage" alt="" width="450" height="200" />
             </div>
             <div class="modal-footer">
-                <div class="quantity-selector">
-                    <label for="quantity-product1">Quantity:</label>
-                    <input type="number" id="quantity-product1" name="quantity-product1" value="1" min="1">
-                </div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
+    <div class="quantity-selector">
+        <label for="quantity-product1">Quantity:</label>
+        <div class="quantity-controls">
+            <div id="current-quantity">1</div> <!-- Box to display current quantity -->
+            <button class="quantity-decrease" onclick="decreaseQuantity()">-</button>
+            <button class="quantity-increase" onclick="increaseQuantity()">+</button>
+        </div>
+                <button type="save" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
                 <div class="d-flex align-items-end"></div>
             </div>
         </div>
@@ -371,6 +374,7 @@
         </div>
 
         <div id="productContainer" class="product-list"></div>
+        </div>
     </div>
 
     <script>
@@ -416,7 +420,7 @@
                     <button class="product-button" data-toggle="modal" data-target="#buyModal" onclick="openBuyModal('${product.product_name}', '${product.price}', '${product.image_url}')">Buy Now</button>
                 `;
                 container.appendChild(productDiv);
-            });
+            })
         })
         .catch(error => {
             console.error(error);
@@ -435,11 +439,26 @@ function openBuyModal(productName, price, imageUrl) {
     document.getElementById('buyModalPrice').innerText = price;
     document.getElementById('buyModalImage').src = imageUrl;
 }
+let price = 10;
+function decreaseQuantity() {
+        var quantityInput = document.getElementById("addToCartModalPrice");
+        var currentValue = parseInt(quantityInput.value);
+        if (price > 10 ) {
+          price -= 10;
+            document.getElementById("addToCartModalPrice").innerText = price; // Update displayed quantity
+        }
+    }
+
+    function increaseQuantity() {
+        var quantityInput = document.getElementById("addToCartModalPrice");
+        var currentValue = parseInt(quantityInput.value);
+        price += 10;
+        document.getElementById("addToCartModalPrice").innerText = price; // Update displayed quantity
+    }
+    
 
 
 
-        
-        
     </script>
 
     
