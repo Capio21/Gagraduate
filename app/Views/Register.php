@@ -6,17 +6,42 @@
     <title>Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+        }
+
         .neomorphic-btn {
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             cursor: pointer;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 3px 3px 5px #bfbfbf, -3px -3px 5px #ffffff;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 8px 8px 15px #d9d9d9, -8px -8px 15px #ffffff;
+            color: #495057;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
-        .neomorphic-btn:hover {
-            box-shadow: 2px 2px 3px #bfbfbf, -2px -2px 3px #ffffff;
-        }
+
+        
     </style>
 </head>
 <body>
@@ -53,11 +78,11 @@
                                 <label for="address" class="form-label">Address</label>
                                 <select id="address" name="address" class="form-select">
                                     <option value="" disabled selected>Select Address</option>
-                                    <option value="address1">Address 1</option>
-                                    <option value="address2">Address 2</option>
-                                    <option value="address3">Address 3</option>
-                                    <option value="address4">Address 4</option>
-                                    <option value="address5">Address 5</option>
+                                    <option value="Centro">Centro</option>
+                                    <option value="Sityo Kanluran">Sityo Kanluran </option>
+                                    <option value="Sityo Silangan">Sityo Silangan</option>
+                                    <option value="Sityo Labasan">Sityo Labasan</option>
+                                    <option value="Boundery">Boundery </option>
                                 </select>
                             </div>
                         </div>
@@ -65,10 +90,30 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="contact_number" class="form-label">Contact Number</label>
-                                <input type="tel" id="contact_number" name="contact_number" placeholder="Contact Number" class="form-control">
-                            </div>
+                        <div class="mb-3">
+    <label for="contact_number" class="form-label">Contact Number</label>
+    <input type="tel" id="contact_number" name="contact_number" placeholder="Contact Number" class="form-control" maxlength="11">
+    <small id="contact_number_help" class="form-text text-danger d-none">Please enter a valid 11-digit contact number.</small>
+</div>
+
+<script>
+    document.getElementById('contact_number').addEventListener('input', function(event) {
+        let input = event.target.value;
+        // Remove non-numeric characters
+        let cleanedInput = input.replace(/\D/g, '');
+        // Update the input field value with cleaned input
+        event.target.value = cleanedInput;
+        // Show error message if the input length exceeds 11 digits
+        let errorMessage = document.getElementById('contact_number_help');
+        if (cleanedInput.length > 11) {
+            errorMessage.classList.remove('d-none');
+        } else {
+            errorMessage.classList.add('d-none');
+        }
+    });
+</script>
+
+
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">

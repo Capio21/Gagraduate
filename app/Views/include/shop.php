@@ -218,33 +218,35 @@
         </div>
         <!-- Navbar End -->
         <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title" id="addToCartModalLabel">Add to cart</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <p>Product Name: <span id="addToCartModalProductName"></span></p>
                 <p>Price: <span id="addToCartModalPrice"></span></p>
-                <img src="" id="addToCartModalImage" alt="" width="450" height="200" />
+                <img src="" id="addToCartModalImage" alt="" class="img-fluid" />
             </div>
             <div class="modal-footer">
-    <div class="quantity-selector">
-        <label for="quantity-product1">Quantity:</label>
-        <div class="quantity-controls">
-            <div id="current-quantity">1</div> <!-- Box to display current quantity -->
-            <button class="quantity-decrease" onclick="decreaseQuantity()">-</button>
-            <button class="quantity-increase" onclick="increaseQuantity()">+</button>
-        </div>
-                <button type="save" class="btn btn-secondary" data-dismiss="modal">Add to Cart</button>
-                <div class="d-flex align-items-end"></div>
+                <div class="quantity-selector">
+                    <label for="quantity-product1" class="mr-2">Quantity:</label>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-light quantity-decrease" onclick="decreaseQuantity()">-</button>
+                        <div id="current-quantity" class="btn btn-light quantity-value">1</div> <!-- Box to display current quantity -->
+                        <button class="btn btn-light quantity-increase" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="addToCartButton" data-dismiss="modal">Add to Cart</button>
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -439,23 +441,30 @@ function openBuyModal(productName, price, imageUrl) {
     document.getElementById('buyModalPrice').innerText = price;
     document.getElementById('buyModalImage').src = imageUrl;
 }
-let price = 10;
-function decreaseQuantity() {
-        var quantityInput = document.getElementById("addToCartModalPrice");
-        var currentValue = parseInt(quantityInput.value);
-        if (price > 10 ) {
-          price -= 10;
-            document.getElementById("addToCartModalPrice").innerText = price; // Update displayed quantity
-        }
-    }
+let price = 10; // Initial price
 
-    function increaseQuantity() {
-        var quantityInput = document.getElementById("addToCartModalPrice");
-        var currentValue = parseInt(quantityInput.value);
-        price += 10;
-        document.getElementById("addToCartModalPrice").innerText = price; // Update displayed quantity
+function decreaseQuantity() {
+    var currentQuantity = document.querySelector('#current-quantity');
+    var currentValue = parseInt(currentQuantity.innerText);
+
+    if (currentValue > 1) { // Ensure quantity doesn't go below 1
+        currentValue--; // Decrease quantity
+        price -= 10; // Decrease price
+        currentQuantity.innerText = currentValue; // Update displayed quantity
+        document.getElementById("addToCartModalPrice").innerText = price; // Update displayed price
     }
-    
+}
+
+function increaseQuantity() {
+    var currentQuantity = document.querySelector('#current-quantity');
+    var currentValue = parseInt(currentQuantity.innerText);
+
+    currentValue++; // Increase quantity
+    price += 10; // Increase price
+    currentQuantity.innerText = currentValue; // Update displayed quantity
+    document.getElementById("addToCartModalPrice").innerText = price; // Update displayed price
+}
+
 
 
 

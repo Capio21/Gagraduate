@@ -81,7 +81,7 @@
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="#"><i
+                                <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>
@@ -106,7 +106,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
+                            
                             <th>Username</th>
                             <th>Full Name</th>
                             <th>Address</th>
@@ -122,7 +122,7 @@
                     <!-- Assuming $members is an array of arrays -->
                     <?php foreach ($members as $member): ?>
                     <tr>
-                        <td><?= $member['id'] ?></td>
+                        
                         <td><?= $member['username'] ?></td>
                         <td><?= $member['full_name'] ?></td>
                         <td><?= $member['address'] ?></td>

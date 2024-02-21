@@ -91,7 +91,7 @@
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="register"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
 
                     <li class="nav-item side-bar"><a class="nav-link" href="#"><i

@@ -37,6 +37,8 @@ $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth
 
 
 $routes->get('/admin', 'AdminController::admin');
+$routes->get('/cart', 'CartController::cart');
+
 
 
 //add to cart

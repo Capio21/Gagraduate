@@ -1,0 +1,56 @@
+ERROR - 2024-02-20 03:20:26 --> mysqli_sql_exception: Table 'prod.cart' doesn't exist in C:\laragon\www\gratest\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\gratest\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\gratest\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\gratest\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\gratest\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\gratest\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\gratest\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\gratest\app\Controllers\CartController.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\gratest\system\CodeIgniter.php(919): App\Controllers\CartController->cart()
+#8 C:\laragon\www\gratest\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+#9 C:\laragon\www\gratest\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\gratest\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\gratest\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-02-20 03:20:26 --> Table 'prod.cart' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cart`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\CartController.php(13): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CartController->cart()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\gratest\\public\\index.php')
+CRITICAL - 2024-02-20 05:17:38 --> Class "App\Controllers\MainMode" not found
+in APPPATH\Controllers\CartController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CartController->cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\gratest\\public\\index.php')
+CRITICAL - 2024-02-20 05:18:25 --> Class "App\Controllers\MainModel" not found
+in APPPATH\Controllers\CartController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CartController->cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\gratest\\public\\index.php')
+CRITICAL - 2024-02-20 05:18:53 --> Class "App\Models\MainModel" not found
+in APPPATH\Controllers\CartController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CartController->cart()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\gratest\\public\\index.php')
+CRITICAL - 2024-02-20 05:19:14 --> Call to undefined method App\Models\CartModel::button
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\CartController.php(20): CodeIgniter\Model->__call('button', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\CartController->cart()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CartController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\gratest\\public\\index.php')

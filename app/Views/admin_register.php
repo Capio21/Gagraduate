@@ -88,97 +88,105 @@
                 </div>
 
                 <ul class="nav flex-column side-bar">
-
                     <li class="nav-item side-bar tmargin"><a class="nav-link" href="/admin"><i
                                 class="bi bi-house"></i>&nbsp;Dashboard</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="/members"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="/members "><i
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
+                                <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="register"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>
-
                     <li class="nav-item side-bar"><a class="nav-link" href="#"><i
                                 class="bi bi-gear"></i>&nbsp;Settings</a></li>
-
                 </ul>
 
                 </ul>
             </nav>
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
-                <h1 class="page-header">Dashboard</h1>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
-                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
-                </ul>
-                <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-    <!-- ... other menu items ... -->
-    <div class="container mt-5">
-        <div class="row justify-content-md-center">
-            <div class="col-md-6">
-                <h2>Register User</h2>
-                <?php if(isset($validation)): ?>
-                    <div class="alert alert-warning"><?= $validation->listErrors() ?></div>
-                <?php endif; ?>
+            <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Register User</h2>
                 <form action="<?= base_url('/user/store') ?>" method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" placeholder="Username" value="<?= set_value('username') ?>" class="form-control">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" id="username" name="username" placeholder="Username" value="<?= set_value('username') ?>" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" placeholder="Password" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="full_name">Full Name</label>
-                                <input type="text" name="full_name" placeholder="Full Name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" name="address" placeholder="Address" class="form-control">
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Additional form fields with labels -->
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="contact_number">Contact Number</label>
-                                <input type="tel" name="contact_number" placeholder="Contact Number" class="form-control">
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label">Full Name</label>
+                                <input type="text" id="full_name" name="full_name" placeholder="Full Name" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="date_of_birth">Date of Birth</label>
-                                <input type="date" name="date_of_birth" placeholder="Date of Birth" class="form-control">
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <select id="address" name="address" class="form-select">
+                                    <option value="" disabled selected>Select Address</option>
+                                    <option value="address1">Centro</option>
+                                    <option value="address2">Sityo Kanluran </option>
+                                    <option value="address3">Sityo Silangan</option>
+                                    <option value="address4">Sityo Labasn</option>
+                                    <option value="address5">Boundery </option>
+                                </select>
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <select name="gender" class="form-control">
+                        <div class="mb-3">
+    <label for="contact_number" class="form-label">Contact Number</label>
+    <input type="tel" id="contact_number" name="contact_number" placeholder="Contact Number" class="form-control" maxlength="11">
+    <small id="contact_number_help" class="form-text text-danger d-none">Please enter a valid 11-digit contact number.</small>
+</div>
+
+<script>
+    document.getElementById('contact_number').addEventListener('input', function(event) {
+        let input = event.target.value;
+        // Remove non-numeric characters
+        let cleanedInput = input.replace(/\D/g, '');
+        // Update the input field value with cleaned input
+        event.target.value = cleanedInput;
+        // Show error message if the input length exceeds 11 digits
+        let errorMessage = document.getElementById('contact_number_help');
+        if (cleanedInput.length > 11) {
+            errorMessage.classList.remove('d-none');
+        } else {
+            errorMessage.classList.add('d-none');
+        }
+    });
+</script>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="date_of_birth" class="form-label">Date of Birth</label>
+                                <input type="date" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select id="gender" name="gender" class="form-select">
                                     <option value="" disabled selected>Select Gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -187,17 +195,18 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="occupation">Occupation</label>
-                                <input type="text" name="occupation" placeholder="Occupation" class="form-control">
+                            <div class="mb-3">
+                                <label for="occupation" class="form-label">Occupation</label>
+                                <input type="text" id="occupation" name="occupation" placeholder="Occupation" class="form-control">
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="membership_type">Membership Type</label>
-                                <select name="membership_type" class="form-control">
+                            <div class="mb-3">
+                                <label for="membership_type" class="form-label">Membership Type</label>
+                                <select id="membership_type" name="membership_type" class="form-select">
                                     <option value="" disabled selected>Select Membership Type</option>
                                     <option value="basic">Basic</option>
                                     <option value="premium">Premium</option>
@@ -206,23 +215,28 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="date_joined">Date Joined</label>
-                                <input type="date" name="date_joined" placeholder="Date Joined" class="form-control">
+                            <div class="mb-3">
+                                <label for="date_joined" class="form-label">Date Joined</label>
+                                <input type="date" id="date_joined" name="date_joined" placeholder="Date Joined" class="form-control">
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="confirmpassword">Confirm Password</label>
-                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control">
+                    <!-- End of additional form fields -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="confirmpassword" class="form-label">Confirm Password</label>
+                                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="neomorphic-btn">Save Account</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-grid gap-2 mt-3">
+                                <button type="submit" class="neomorphic-btn">Save Account</button>
+                            </div>
+                        </div>
 
     <!-- Logout Modal -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
