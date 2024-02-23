@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +95,7 @@
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
@@ -99,6 +105,9 @@
                     
                 
                 </ul>
+
+                
+
                     <!-- ... other menu items ... -->
                 </ul>
             </nav>
@@ -112,7 +121,44 @@
                 <div class="container mt-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                          
+                        <div class="container">
+                        <div class="container">
+    <h2 class="text-center my-4">Edit Workshop</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="<?= site_url('/workshop/update/' . $workshop['workshop_id']) ?>" method="post">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<?= $workshop['title'] ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description" name="description" rows="5" required><?= $workshop['description'] ?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" class="form-control" id="date" name="date" value="<?= $workshop['date'] ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">Image URL:</label>
+                    <input type="text" class="form-control" id="image_url" name="image_url" value="<?= $workshop['image_url'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="additional_info">Additional Info:</label>
+                    <textarea class="form-control" id="additional_info" name="additional_info" rows="5"><?= $workshop['additional_info'] ?></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+ 
+
+<br>
+                <br>
                     </div>
                 </div>
             </main>

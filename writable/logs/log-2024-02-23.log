@@ -1,0 +1,42 @@
+CRITICAL - 2024-02-23 12:49:37 --> Undefined variable $workshops
+in APPPATH\Views\workshop\create.php on line 150.
+ 1 APPPATH\Views\workshop\create.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $workshops', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\workshop\\create.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\workshop\\create.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('workshop/create', [], true)
+ 5 APPPATH\Controllers\Workshop.php(19): view('workshop/create')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Workshop->create()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Workshop))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-23 12:56:20 --> Invalid file: "/Admin_index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Admin_index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/Admin_index', [], true)
+ 3 APPPATH\Controllers\Workshop.php(21): view('/Admin_index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Workshop->Admin_index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Workshop))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-23 12:56:45 --> Invalid file: "Admin_index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Admin_index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Admin_index', [], true)
+ 3 APPPATH\Controllers\Workshop.php(21): view('Admin_index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Workshop->Admin_index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Workshop))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-23 12:57:58 --> Invalid file: "Admin_index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Admin_index.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Admin_index', [], true)
+ 3 APPPATH\Controllers\Workshop.php(21): view('Admin_index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Workshop->Admin_index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Workshop))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')

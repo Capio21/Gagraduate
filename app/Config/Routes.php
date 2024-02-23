@@ -58,8 +58,22 @@ $routes->get('/shop', 'CartController::cart');
 
 
 $routes->get('event', 'Event::index');
-$routes->get('events/create', 'Event::create');
+$routes->get('create', 'Event::create');
 $routes->post('events/store', 'Event::store');
 $routes->get('events/edit/(:num)', 'Event::edit/$1');
 $routes->post('events/update/(:num)', 'Event::update/$1');
 $routes->get('events/delete/(:num)', 'Event::delete/$1');
+
+
+
+//workshop
+
+
+$routes->get('workshop', 'Workshop::index');
+$routes->get('workshop/create', 'Workshop::create');
+$routes->post('workshop/store', 'Workshop::store');
+$routes->get('workshop/edit/(:num)', 'Workshop::edit/$1');
+$routes->post('workshop/update/(:num)', 'Workshop::update/$1');
+$routes->get('workshop/delete/(:num)', 'Workshop::delete/$1');
+$routes->get('Admin_index', 'Workshop::Admin_index');
+

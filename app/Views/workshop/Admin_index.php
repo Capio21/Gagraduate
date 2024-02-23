@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +94,7 @@
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
@@ -99,12 +104,15 @@
                     
                 
                 </ul>
+
+                
+
                     <!-- ... other menu items ... -->
                 </ul>
             </nav>
 
              <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Workshop</h1>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
@@ -112,7 +120,50 @@
                 <div class="container mt-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                          
+                        <div class="container">
+                        <div class="container">
+                        <div class="row">
+
+
+                        <div class="row">
+                            
+                        <h2 class="text-center my-4"> <a href="<?= site_url('/workshop/create') ?>" class="btn btn-primary mb-3">Create New Workshop</a> <br>
+                        Workshops </h2>
+
+
+    
+    <?php foreach ($workshops as $workshop): ?>
+        <div class="col-12 mb-4">
+            
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="<?= base_url($workshop['image_url']) ?>" class="card-img" alt="Workshop Image" style="max-height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Workshop Title: <?= $workshop['title'] ?></h5>
+                            <p class="card-text">Description: <?= $workshop['description'] ?></p>
+                            <p class="card-text">Date: <?= $workshop['date'] ?></p>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-danger" onclick="deleteWorkshop(<?= $workshop['workshop_id'] ?>)">Delete</button>
+                                <a href="<?= site_url('/workshop/edit/' . $workshop['workshop_id']) ?>" class="btn btn-warning">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+</div>
+
+    </div>
+
+<br>
+                <br>
                     </div>
                 </div>
             </main>

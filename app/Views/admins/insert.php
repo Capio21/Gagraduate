@@ -78,27 +78,28 @@
                 
                 <ul class="nav flex-column side-bar">
 
-                    <li class="nav-item side-bar tmargin"><a class="nav-link" href="/admin"><i
-                                class="bi bi-house"></i>&nbsp;Dashboard</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="/members"><i
-                                class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
-                                class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
-                                class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
-                                class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
+<li class="nav-item side-bar tmargin"><a class="nav-link" href="/admin"><i
+            class="bi bi-house"></i>&nbsp;Dashboard</a></li>
+<li class="nav-item side-bar"><a class="nav-link" href="/members"><i
+            class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
+<li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
+            class="bi bi-star"></i>&nbsp;Add Product</a></li>
+<li class="nav-item side-bar"><a class="nav-link" href="create"><i
+            class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
+<li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
+            class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
 
-                    <li class="nav-item side-bar"><a class="nav-link" href="#"><i
-                                class="bi bi-gear"></i>&nbsp;Settings</a></li>
-                    
-                </ul>
+<li class="nav-item side-bar"><a class="nav-link" href="Admin_index"><i
+            class="bi bi-gear"></i>&nbsp;Add WorkShop</a></li>
+
+
+</ul>
                     <!-- ... other menu items ... -->
                 </ul>
             </nav>
 
              <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Add Product</h1>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>

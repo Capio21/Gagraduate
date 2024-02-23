@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +94,7 @@
                                 class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
                                 class="bi bi-star"></i>&nbsp;Add Product</a></li>
-                    <li class="nav-item side-bar"><a class="nav-link" href="events/create"><i
+                    <li class="nav-item side-bar"><a class="nav-link" href="create"><i
                                 class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
                     <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
                                 class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
@@ -99,6 +104,9 @@
                     
                 
                 </ul>
+
+                
+
                     <!-- ... other menu items ... -->
                 </ul>
             </nav>
@@ -112,7 +120,35 @@
                 <div class="container mt-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                          
+                        <div class="container">
+    <h2>Create Workshop</h2>
+    <form action="<?= site_url('/workshop/store') ?>" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+        </div>
+        <div class="mb-3">
+            <label for="additional_info" class="form-label">Additional Info:</label>
+            <textarea class="form-control" id="additional_info" name="additional_info"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<br>
+                <br>
                     </div>
                 </div>
             </main>

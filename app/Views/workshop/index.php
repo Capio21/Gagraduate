@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +32,10 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <style>
-         
+          .workshop-image {
+            max-width: 100px;
+            height: auto;
+        }
     </style>
 
     <body>
@@ -91,33 +97,29 @@
 
 <br>
 <br>
-
-        <body>
-        <div class="container mt-5">
-        <h1 class="mb-4">Events</h1>
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($events as $event) : ?>
-                    <tr>
-                        <td><?= $event['title'] ?></td>
-                        <td><?= $event['description'] ?></td>
-                        <td><?= $event['time'] ?></td>
-                        <td><?= $event['location'] ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+        <h2 class="text-center my-4">Workshops</h2>
+       
+        <div class="row">
+            <?php foreach ($workshops as $workshop): ?>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="<?= base_url($workshop['image_url']) ?>" class="card-img-top workshop-image" alt="Workshop Image">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $workshop['title'] ?></h5>
+                            <p class="card-text"><?= $workshop['description'] ?></p>
+                            <p class="card-text"><strong>Date:</strong> <?= $workshop['date'] ?></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-</body>
 </body>
 
 
