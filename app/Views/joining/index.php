@@ -68,9 +68,13 @@
 
 
                     <li class="nav-item active"><a class="nav-link" title="View Website" href="#"><i class="bi bi-globe"></i></a></li>
+                    
+
+
                     <!-- Logout Modal -->
                     <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#logoutModal"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
                 </ul>
+                
             </div>
         </div>
     </nav>
@@ -107,10 +111,10 @@
             </nav>
 
              <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Joining List</h1>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
-                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Joining List</a></li>
                 </ul>
                 <div class="container mt-5">
                     <div class="row justify-content-center">
@@ -119,29 +123,51 @@
                         <h1>Joining List</h1>
 
 
-<div class="list-group">
-
-    <?php foreach ($joining as $join): ?>
-        <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><?= $join['title'] ?></h5>
-                <small><?= $join['age'] ?> years old</small>
+                        <div class="container">
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search...">
+    <div class="list-group">
+        <?php foreach ($joining as $join): ?>
+            <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><?= $join['title'] ?></h5>
+                    <small><?= $join['age'] ?> years old</small>
+                </div>
+                <p class="mb-1"><?= $join['name'] ?></p>
+                <p class="mb-1"><?= $join['description'] ?></p>
+                <p class="mb-1"><?= $join['date'] ?></p>
+                <p class="mb-1"><?= $join['sex'] ?></p>
+                <p class="mb-1">Location: <?= $join['location'] ?></p>
+                <p class="mb-1">Contact Number: <?= $join['contact_number'] ?></p>
+                <div class="text-right">
+                    <a href="/joining/edit/<?= $join['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/joining/delete/<?= $join['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+                </div>
             </div>
-            <p class="mb-1"><?= $join['name'] ?></p>
-            <p class="mb-1"><?= $join['description'] ?></p>
-            <p class="mb-1"><?= $join['date'] ?></p>
-            <p class="mb-1"><?= $join['sex'] ?></p>
-            
-            <p class="mb-1">Location: <?= $join['location'] ?></p>
-            <p class="mb-1">Contact Number: <?= $join['contact_number'] ?></p>
-            <div class="text-right">
-                <a href="/joining/edit/<?= $join['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                <a href="/joining/delete/<?= $join['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
-            </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 </div>
 
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+        var input, filter, items, item, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        items = document.querySelectorAll(".list-group-item");
+        for (i = 0; i < items.length; i++) {
+            item = items[i];
+            txtValue = item.textContent || item.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+            }
+        }
+    });
+</script>
+
+<br>
+<br>
+<br>
 
                           
                     </div>
