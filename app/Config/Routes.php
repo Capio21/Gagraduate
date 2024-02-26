@@ -77,3 +77,22 @@ $routes->post('workshop/update/(:num)', 'Workshop::update/$1');
 $routes->get('workshop/delete/(:num)', 'Workshop::delete/$1');
 $routes->get('Admin_index', 'Workshop::Admin_index');
 
+
+
+//joining in the workshop
+
+$routes->get('joining', 'Joining::index');
+$routes->get('joining/create', 'Joining::create');
+$routes->post('joining', 'Joining::store');
+$routes->get('joining/edit/(:num)', 'Joining::edit/$1');
+$routes->post('joining/update', 'Joining::update');
+$routes->get('joining/delete/(:num)', 'Joining::delete/$1');
+
+
+
+
+
+
+
+
+

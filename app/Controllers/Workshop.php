@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\WorkshopModel;
+use App\Models\JoiningModel;
 use CodeIgniter\Controller;
 
 class Workshop extends Controller
@@ -68,4 +69,5 @@ class Workshop extends Controller
         $model->delete($id);
         return redirect()->to('/workshop');
     }
+   
 }

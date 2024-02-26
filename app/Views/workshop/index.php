@@ -113,7 +113,17 @@
                             <h5 class="card-title"><?= $workshop['title'] ?></h5>
                             <p class="card-text"><?= $workshop['description'] ?></p>
                             <p class="card-text"><strong>Date:</strong> <?= $workshop['date'] ?></p>
-                            
+                            <button type="button" class="btn btn-primary btn-join"
+            data-title="<?= $workshop['title'] ?>"
+            data-description="<?= $workshop['description'] ?>"
+            data-date="<?= $workshop['date'] ?>"
+            data-toggle="modal" data-target="#exampleModalCenter">
+            Join
+        </button>
+
+
+
+    </form>
                         </div>
                     </div>
                 </div>
@@ -121,6 +131,54 @@
         </div>
     </div>
 </body>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add New Joining</h5>
+        
+        <div class="modal-body">
+  
+    <form action="/joining" method="post" class="row g-3">
+     <h5 id="workshop-title" name="title"></h5>
+    <p id="workshop-description" name="description"></p>
+    <input type="hidden" id="workshop-title" name="title">
+            <input type="text" id="workshop-description" name="description" style="border:none;" readonly>
+            <input type="text" id="workshop-date" name="date" style="border:none; position:absolute; margin-top:112px; margin-left:50px; width:100px;" readonly>
+    <p><strong>Date:</strong> <span id="workshop-date" name="date"></span></p>
+        <div class="col-md-6">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control">
+            <label for="middle_name" class="form-label">Middle Name:</label>
+            <input type="text" id="middle_name" name="middle_name" class="form-control">
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" id="age" name="age" class="form-control">
+        </div>
+        <!-- Second Column -->
+        <div class="col-md-6">
+            <label for="sex" class="form-label">Sex:</label>
+            <select id="sex" name="sex" class="form-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+            <label for="location" class="form-label">Location:</label>
+            <input type="text" id="location" name="location" class="form-control">
+            <label for="contact_number" class="form-label">Contact Number:</label>
+            <input type="text" id="contact_number" name="contact_number" class="form-control" pattern="\d{11}" date="Please enter 11 digits." maxlength="11">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
         
@@ -147,6 +205,12 @@
         
 
 
+<!-- Modal -->
+
+
+<!-- Display existing joinings -->
+
+
     
         <!-- Hero End -->
 
@@ -158,11 +222,63 @@
         <!-- Copyright End -->
 
 
-
+<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="joinModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="joinModalLabel">Join Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/joinings" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <!-- Add other form fields for middle name, age, sex, location, contact number, additional info here -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-        
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Bootstrap JS Bundle (including Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your custom JavaScript code -->
+<script>
+    $(document).ready(function(){
+        // Listen for click event on the "Join" button
+        $('.btn-join').click(function(){
+            // Get workshop details from the data attributes
+            var title = $(this).data('title');
+            var description = $(this).data('description');
+            var date = $(this).data('date');
+            
+            // Set modal content with workshop details
+            $('#exampleModalCenter .modal-title').text(title);
+            $('#exampleModalCenter #workshop-title').val(title);
+            $('#exampleModalCenter #workshop-description').val(description);
+            $('#exampleModalCenter #workshop-date').val(date);
+            
+            // Trigger the modal to open
+            $('#exampleModalCenter').modal('show');
+        });
+    });
+</script>
+
+
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

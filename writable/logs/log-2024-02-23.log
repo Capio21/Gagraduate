@@ -40,3 +40,15 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-02-23 18:02:50 --> Undefined variable $messages
+in APPPATH\Views\workshop\index.php on line 122.
+ 1 APPPATH\Views\workshop\index.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $messages', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\workshop\\index.php', 122)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\workshop\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('workshop/index', [], true)
+ 5 APPPATH\Controllers\Workshop.php(14): view('workshop/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Workshop->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Workshop))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
