@@ -6,6 +6,7 @@ use App\Models\ProductModel;
 use App\Models\CategoryModel;
 use App\Controllers\BaseController;
 use App\Models\UserModel;
+use App\Models\MemberModel;
 
 class AdminController extends BaseController
 {
@@ -153,10 +154,38 @@ public function updateForm($product_id)
         return redirect()->to('/insert')->with('error', 'Product not found');
     }
 }
-public function admin(): string
+
+public function admin()
 {
-    return view('admin');
+    $data['dates'] = []; // Array to hold dates
+    $data['counts'] = []; // Array to hold member counts for each date
+
+    // Retrieve data from the database
+    $memberModel = new \App\Models\UserModel();
+
+    // Retrieve data from the database
+    $members = $memberModel->findAll();
+
+    // Organize the data
+    foreach ($members as $member) {
+        $dateJoined = date('Y-m-d', strtotime($member['date_joined']));
+        if (isset($data['counts'][$dateJoined])) {
+            $data['counts'][$dateJoined]++;
+        } else {
+            $data['dates'][] = $dateJoined;
+            $data['counts'][$dateJoined] = 1;
+        }
+    }
+
+    // Get the total number of members
+    $totalMembers = count($members);
+
+    // Pass data to the view including total members count
+    return view('admin', ['dates' => $data['dates'], 'counts' => $data['counts'], 'totalMembers' => $totalMembers]);
+
+
 }
+
 
 
 

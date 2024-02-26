@@ -7,6 +7,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.24.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             padding-top: 80px;
@@ -113,7 +114,16 @@
                 <div class="container mt-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                          
+                        <div style="width: 130%;">
+    <div style="border: 1px solid #ccc; padding: 10px; width: calc(80% - 7px); display: inline-block;">
+        <canvas id="memberGraph" width="800" height="300"></canvas>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; width: calc(80% - 5px); display: inline-block;">
+        <canvas id="memberCountGraph" width="600" height="300"></canvas>
+    </div>
+</div>
+<p>Total Number of Members: <?php echo $totalMembers; ?></p>
+
                     </div>
                 </div>
             </main>
@@ -156,6 +166,70 @@
     </div>
   </div>
 </div>
+
+
+<script>
+    var dates = <?php echo json_encode($dates); ?>;
+    var counts = <?php echo json_encode(array_values($counts)); ?>;
+
+    var ctx = document.getElementById('memberGraph').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Number of Members Joined',
+                data: counts,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var memberDates = <?php echo json_encode($dates); ?>;
+    var memberCounts = <?php echo json_encode(array_values($counts)); ?>;
+
+    var ctx2 = document.getElementById('memberCountGraph').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: memberDates,
+            datasets: [{
+                label: 'Number of Members Joined',
+                data: memberCounts,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Members Joined' // Y-axis label
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date' // X-axis label
+                    }
+                }
+            }
+        }
+    });
+</script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
