@@ -101,6 +101,7 @@
 
              <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
                 <h1 class="page-header">Add Product</h1>
+                <a href="/seller/create">Add New Product</a> 
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>

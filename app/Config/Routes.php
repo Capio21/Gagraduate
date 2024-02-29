@@ -90,6 +90,19 @@ $routes->get('joining/delete/(:num)', 'Joining::delete/$1');
 
 
 
+//seller side
+
+$routes->get('/seller', 'SellerController::index');
+$routes->get('/seller/create', 'SellerController::create');
+$routes->post('/seller/store', 'SellerController::store');
+$routes->get('/seller/edit/(:num)', 'SellerController::edit/$1');
+$routes->post('/seller/update/(:num)', 'SellerController::update/$1');
+$routes->get('/seller/delete/(:num)', 'SellerController::delete/$1');
+// In app/Config/Routes.php
+
+
+
+
 
 
 

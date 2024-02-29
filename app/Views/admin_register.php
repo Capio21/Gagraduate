@@ -146,11 +146,11 @@
                                 <label for="address" class="form-label">Address</label>
                                 <select id="address" name="address" class="form-select">
                                     <option value="" disabled selected>Select Address</option>
-                                    <option value="address1">Centro</option>
-                                    <option value="address2">Sityo Kanluran </option>
-                                    <option value="address3">Sityo Silangan</option>
-                                    <option value="address4">Sityo Labasn</option>
-                                    <option value="address5">Boundery </option>
+                                    <option value="Centro">Centro</option>
+                                    <option value="Sityo Kanluran">Sityo Kanluran </option>
+                                    <option value="Sityo Silangan">Sityo Silangan</option>
+                                    <option value="Sityo Labasan">Sityo Labasan</option>
+                                    <option value="Boundery">Boundery </option>
                                 </select>
                             </div>
                         </div>
@@ -216,9 +216,9 @@
                                 <label for="membership_type" class="form-label">Membership Type</label>
                                 <select id="membership_type" name="membership_type" class="form-select">
                                     <option value="" disabled selected>Select Membership Type</option>
-                                    <option value="basic">Basic</option>
-                                    <option value="premium">Premium</option>
-                                    <option value="vip">VIP</option>
+                                    <option value="Distributer">Distributer</option>
+                                    <option value="Senior Citizen">Senior Citizen</option>
+                                    <option value="Officer">Officer</option>
                                 </select>
                             </div>
                         </div>

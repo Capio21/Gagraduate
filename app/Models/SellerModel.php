@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CartModel extends Model
+class SellerModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'cart';
+    protected $table            = 'seller';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['prodName', 'price', 'quantity', 'image','category','user_id'];
+    protected $allowedFields    = ['product_name', 'description', 'price', 'stock_count', 'image'];
 
     // Dates
     protected $useTimestamps = false;

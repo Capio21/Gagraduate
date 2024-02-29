@@ -149,9 +149,9 @@
                                 <label for="membership_type" class="form-label">Membership Type</label>
                                 <select id="membership_type" name="membership_type" class="form-select">
                                     <option value="" disabled selected>Select Membership Type</option>
-                                    <option value="basic">Basic</option>
-                                    <option value="premium">Premium</option>
-                                    <option value="vip">VIP</option>
+                                    <option value="Distributer">Distributer</option>
+                                    <option value="Senior Citizen">Senior Citizen</option>
+                                    <option value="Officer">Officer</option>
                                 </select>
                             </div>
                         </div>

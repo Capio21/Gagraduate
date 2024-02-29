@@ -30,7 +30,7 @@ class Event extends BaseController
             'location' => $this->request->getPost('location')
         ];
         $model->insert($data);
-        return redirect()->to('events/create');
+        return redirect()->to('create');
     }
 
     public function edit($id)

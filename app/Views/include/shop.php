@@ -162,6 +162,40 @@
 #buyModal .button--full {
   inline-size: 100%;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
     </style>
 
@@ -188,29 +222,26 @@
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto">
+                    <div class="navbar-nav mx-auto">
                             <a href="/user" class="nav-item nav-link active">Home</a>
-                            <a href="" class="nav-item nav-link">Shop</a>
+                            <a href="/shop" class="nav-item nav-link">Shop</a>
                             <a href="workshop" class="nav-item nav-link">Workshop</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="/cart" class="dropdown-item">Cart</a>
-                                    <a href="/checkout" class="dropdown-item">Chackout</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                           
+                            <a href="/event" class="nav-item nav-link">Events</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="/user" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                            <a href="#" class="my-auto">
-                                <i class="fas fa-user fa-2x"></i>
-                            </a>
-                        </div>
+                        <a href="#" id="openModal" class="position-relative me-4 my-auto">
+    <i class="fa fa-shopping-bag fa-2x"></i>
+</a>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Shoping Cart</p>
+
+        <ul id="cartItems"></ul>
+    </div>
+</div>
+
                         
                     </div>
                 </nav>
@@ -226,21 +257,25 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form id="addToCartForm">
             <div class="modal-body">
-                <p>Product Name: <span id="addToCartModalProductName"></span></p>
-                <p>Price: <span id="addToCartModalPrice"></span></p>
-                <img src="" id="addToCartModalImage" alt="" class="img-fluid" />
+
+                <p>Product Name: <span id="addToCartModalProductName" name="prodName"></span></p>
+                <p>Price: <span id="addToCartModalPrice" name="price"></span></p>
+                <img src="" id="addToCartModalImage" alt="" name="image" class="img-fluid" />
             </div>
             <div class="modal-footer">
                 <div class="quantity-selector">
                     <label for="quantity-product1" class="mr-2">Quantity:</label>
                     <div class="btn-group" role="group">
                         <button class="btn btn-light quantity-decrease" onclick="decreaseQuantity()">-</button>
-                        <div id="current-quantity" class="btn btn-light quantity-value">1</div> <!-- Box to display current quantity -->
+                        <div id="current-quantity" name="quantity" class="btn btn-light quantity-value">1</div> <!-- Box to display current quantity -->
                         <button class="btn btn-light quantity-increase" onclick="increaseQuantity()">+</button>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" id="addToCartButton" data-dismiss="modal">Add to Cart</button>
+            </form>
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+
             </div>
         </div>
     </div>
@@ -384,6 +419,10 @@
         </div>
     </div>
 
+    <!-- Inside your <script> tag or external JavaScript file -->
+
+
+
     <script>
         const womenButton = document.getElementById('womenButton');
         const accessoriesButton = document.getElementById('accessoriesButton');
@@ -495,6 +534,26 @@ function increaseQuantity() {
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById("openModal").addEventListener("click", function() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+});
+
+document.getElementsByClassName("close")[0].addEventListener("click", function() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+});
+
+// Function to add items to the cart and display in the modal
+function addToCart(productName) {
+    var cartItems = document.getElementById("cartItems");
+    var listItem = document.createElement("li");
+    listItem.textContent = productName;
+    cartItems.appendChild(listItem);
+}
+
+    </script>
     </body>
 
 </html>

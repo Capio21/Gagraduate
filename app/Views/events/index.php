@@ -59,30 +59,10 @@
                             <a href="/user" class="nav-item nav-link active">Home</a>
                             <a href="/shop" class="nav-item nav-link">Shop</a>
                             <a href="workshop" class="nav-item nav-link">Workshop</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="/cart" class="dropdown-item">Cart</a>
-                                    <a href="/checkout" class="dropdown-item">Chackout</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
-                            </div>
+                           
                             <a href="/event" class="nav-item nav-link">Events</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
-                            <a href="#" class="my-auto">
-                                <i class="fas fa-user fa-2x"></i>
-                            </a>
-
-
-                            
-                        </div>
+                      
                     </div>
                 </nav>
             </div>
@@ -91,34 +71,33 @@
 
 <br>
 <br>
-
-        <body>
-        <div class="container mt-5">
+<body>
+    <div class="container mt-5">
         <h1 class="mb-4">Events</h1>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($events as $event) : ?>
-                    <tr>
-                        <td><?= $event['title'] ?></td>
-                        <td><?= $event['description'] ?></td>
-                        <td><?= $event['time'] ?></td>
-                        <td><?= $event['location'] ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <div class="row">
+            <?php $count = 0; ?>
+            <?php foreach ($events as $event) : ?>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $event['title'] ?></h5>
+                            <p class="card-text"><?= $event['description'] ?></p>
+                            <p class="card-text"><strong>Time:</strong> <?= $event['time'] ?></p>
+                            <p class="card-text"><strong>Location:</strong> <?= $event['location'] ?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php $count++; ?>
+                <?php if ($count % 2 == 0) : ?>
+                    </div>
+                    <div class="row">
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 </body>
-</body>
+
 
 
         
