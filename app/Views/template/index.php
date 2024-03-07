@@ -94,11 +94,13 @@
         <div class="container-fluid py-5 mb-5 hero-header">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
+                    
                     <div class="col-md-12 col-lg-7">
                         <h4 class="mb-3 text-secondary">Mulawin Coconut Farmers Coop.</h4>
                         <h1 class="mb-5 display-3 text-primary">Workshop and Products</h1>
-                      
+                  
                     </div>
+                    
                     
                     <a class="button" href="https://www.facebook.com/messages/t/61550955003982"> 
   <i class="fab fa-facebook-messenger icon"></i>
