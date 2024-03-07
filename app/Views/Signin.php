@@ -8,100 +8,63 @@
 
     <style>
         body {
-           
-            background-position: center;
+            background-image: url('background_image.jpg'); /* Replace 'background_image.jpg' with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Changed to 100vh for full viewport height */
         }
 
-        h2 {
-            color: #333333;
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .btn-success {
-            background-color: #333333;
-            border: 1px solid #333333;
-            color: #ffffff;
-        }
-
-        .alert {
-            background-color: #ffffcc;
-            border: 1px solid #ffcc00;
-            color: #333300;
-        }
-
-        .form-control {
-            background-color: #f5f5f5;
-            border: 1px solid #dddddd;
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 30px;
             border-radius: 10px;
-            padding: 10px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .d-grid {
+        .login-logo {
             text-align: center;
+            margin-bottom: 20px;
         }
 
-        .neomorphic-btn {
-            background-color: #f5f5f5;
-            border: 1px solid #dddddd;
-            border-radius: 10px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.5);
-            color: #333333;
-            padding: 10px 20px;
-            font-weight: bold;
-            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        .login-logo img {
+            max-width: 200px;
+            height: auto;
         }
-
-        .neomorphic-btn:hover {
-            transform: scale(1.05);
-            background-color: #dddddd;
-            color: #000000;
-        }
-
-        .neomorphic-btn:active {
-            background-color: #333333;
-            box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.5);
-            color: #ffffff;
-        }
-
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-5">
-                <h2>Login</h2>
-                <?php if(session()->getFlashdata('msg')): ?>
-                    <div class="alert alert-warning">
-                        <?= session()->getFlashdata('msg') ?>
+            <div class="col-md-6">
+                <div class="form-container">
+                    <div class="login-logo">
+                        <img src="logo.png" alt="Logo">
                     </div>
-                <?php endif; ?>
-                <form action="<?php echo base_url(); ?>/signin/loginAuth" method="post">
-                  <div class="form-group mb-3">
-                      <input type="text" name="username" placeholder="Username" value="<?= set_value('username') ?>" class="form-control" required>
-                  </div>
-                  <div class="form-group mb-3">
-    <input type="password" name="password" placeholder="Password" class="form-control" required inputmode="none">
-</div>
+                    <h2 class="text-center">Login</h2>
+                    <?php if(session()->getFlashdata('msg')): ?>
+                        <div class="alert alert-warning">
+                            <?= session()->getFlashdata('msg') ?>
+                        </div>
+                    <?php endif; ?>
+                    <form action="<?php echo base_url(); ?>/signin/loginAuth" method="post">
+                        <div class="mb-3">
+                            <input type="text" name="username" placeholder="Username" value="<?= set_value('username') ?>" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" placeholder="Password" class="form-control" required inputmode="none">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </form>
 
-                  <div class="d-grid">
-                      <button type="submit" class="neomorphic-btn btn btn-success">Login</button>
-                  </div>
-              </form>
-
-              <!-- Add the Register Account button -->
-              <div class="text-center mt-3">
-                <a href="/register" class="neomorphic-btn btn btn-primary">Register Account</a>
-              </div>
+                    <!-- Add the Register Account button -->
+                    <div class="text-center mt-3">
+                        <a href="/register" class="btn btn-primary">Register Account</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
