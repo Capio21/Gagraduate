@@ -8,9 +8,7 @@
 
     <style>
         body {
-            background-image: url('background_image.jpg'); /* Replace 'background_image.jpg' with your image path */
-            background-size: cover;
-            background-repeat: no-repeat;
+            background-color: #007bff; /* Blue background color */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -36,7 +34,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-container">
                     <div class="login-logo">
