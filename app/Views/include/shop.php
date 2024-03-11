@@ -292,30 +292,7 @@
                 </button>
             </div>
             <div class="modal-body">
-    <h2>Address</h2>
-    <div class="card">
-        <form>
-            <div class="form-group">
-                <label for="addressLine1">Address Line 1</label>
-                <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Enter Address Line 1" required>
-            </div>
-            <div class="form-group">
-                <label for="addressLine2">Address Line 2</label>
-                <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Enter Address Line 2">
-            </div>
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Enter City" required>
-            </div>
-            <div class="form-group">
-                <label for="state">State</label>
-                <input type="text" class="form-control" id="state" name="state" placeholder="Enter State" required>
-            </div>
-            <div class="form-group">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter Zip" required>
-            </div>
-        </form>
+   
     </div>
                 <fieldset>
                     <legend>Payment Method</legend>
@@ -355,12 +332,12 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button class="button button--full" type="submit">
-                    <svg class="icon">
-                        <use xlink:href="#icon-shopping-bag"></use>
-                    </svg>
-                    Buy Now
-                </button>
+            <button class="button button--full" type="button" onclick="buyProduct()">
+    <svg class="icon">
+        <use xlink:href="#icon-shopping-bag"></use>
+    </svg>
+    Buy Now
+</button>
             </div>
         </div>
     </div>
@@ -507,6 +484,35 @@ function increaseQuantity() {
     price += 10; // Increase price
     currentQuantity.innerText = currentValue; // Update displayed quantity
     document.getElementById("addToCartModalPrice").innerText = price; // Update displayed price
+}
+function buyProduct() {
+    const productName = document.getElementById('buyModalProductName').innerText;
+    const price = document.getElementById('buyModalPrice').innerText;
+
+    // Make AJAX request to the controller method
+    fetch('/purchase/buyProduct', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            productName: productName,
+            price: price
+            // Add other fields as needed
+        }),
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle success
+            console.log('Purchase successful');
+        } else {
+            // Handle error
+            console.error('Failed to purchase product');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 
