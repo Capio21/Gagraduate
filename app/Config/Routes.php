@@ -34,7 +34,7 @@ $routes->get('/admin_register', '\App\Controllers\UserController::admin_register
 $routes->post('/user/store', '\App\Controllers\UserController::store');
 $routes->get('/', '\App\Controllers\SigninController::login');
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth', ['filter' => 'authGuard']);
-
+$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 
 $routes->get('/admin', 'AdminController::admin');
 $routes->get('/cart', 'CartController::cart');
@@ -92,9 +92,12 @@ $routes->get('joining/delete/(:num)', 'Joining::delete/$1');
 
 //seller side
 
+$routes->get('/seller/sellerindex', 'SellerController::sellerindex');
 $routes->get('/seller', 'SellerController::index');
 $routes->get('/seller/create', 'SellerController::create');
 $routes->post('/seller/store', 'SellerController::store');
+$routes->get('/seller/sellerAdmin', 'SellerController::sellerAdmin');
+
 $routes->get('/seller/edit/(:num)', 'SellerController::edit/$1');
 $routes->post('/seller/update/(:num)', 'SellerController::update/$1');
 $routes->get('/seller/delete/(:num)', 'SellerController::delete/$1');

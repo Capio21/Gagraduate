@@ -1,3 +1,8 @@
+<?php
+$session = session();
+$username = $session->get('username');
+$full_name = $session->get('full_name');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +25,8 @@
         <!-- Libraries Stylesheet -->
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        
 
 
         <!-- Customized Bootstrap Stylesheet -->
@@ -46,6 +53,55 @@
 .icon {
   margin-right: 10px;
 }
+   /* Style for the modal */
+   /* Modal styles */
+
+   .offcanvas-content {
+  width: 80%; /* Adjust the width as needed */
+}
+
+.profile-details {
+  text-align: center; /* Center the profile details */
+}
+
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; 
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 </style>
     <body>
 
@@ -77,14 +133,85 @@
                            
                             <a href="/event" class="nav-item nav-link">Events</a>
                         </div>
-                        
+                       
+
+<!-- Modal -->
+<!-- Bootstrap button with Font Awesome icon -->
+<!-- Profile button -->
+<!-- Profile button as an image button -->
+<button class="btn btn-primary rounded-circle" id="profileButton" type="button" style="width: 50px; height: 50px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 15 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+    </svg>
+</button>
+
+
+
+
+
+
+<!-- Offcanvas section -->
+<div class="offcanvas offcanvas-end d-flex align-items-center justify-content-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-content">
+    <div class="offcanvas-header">
+
+      
+    </div>
+    <div class="offcanvas-body">
+      <!-- Profile details content -->
+      <div class="profile-details">
+        <div class="profile-header">
+          <h1>Welcome, <?php echo $full_name; ?></h1>
+          <p><?php echo $username; ?></p>
+         <!-- Button trigger modal -->
+<!-- Button to trigger the modal -->
+
+
+
+<!-- Modal -->
+
+         
+<!-- Logout Modal -->
+
+
+
+         
+        </div>
+
+       
+        <!-- Other content of user dashboard -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    document.getElementById('profileButton').addEventListener('click', function () {
+        var offcanvasElement = document.getElementById('offcanvasRight');
+        var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+        offcanvas.toggle();
+    });
+
+
+
+
+
+
+</script>
+
+
+
+
+
                     </div>
                 </nav>
             </div>
         </div>
         <!-- Navbar End -->
 
-
+       
         <!-- Modal Search Start -->
       
         <!-- Modal Search End -->
@@ -118,10 +245,6 @@
       
         <!-- Featurs Section Start -->
         
-        <!-- Featurs Section End -->
-
-        <!-- Copyright End -->
-
 
 
         <!-- Back to Top -->

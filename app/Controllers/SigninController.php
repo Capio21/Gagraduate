@@ -34,16 +34,27 @@ class SigninController extends BaseController
             $ses_data = [
                 'id' => $data['id'],
                 'username' => $data['username'],
+                'full_name' => $data['full_name'], // Store full_name in session
                 'isLoggedin' => true
-
             ];
             $session->set($ses_data);
             return redirect()->to('/admin');
+        } else if ($username === 'seller' && password_verify($password, $hashedPassword)) {
+            // Redirect sellers to their specific page
+            $ses_data = [
+                'id' => $data['id'],
+                'username' => $data['username'],
+                'full_name' => $data['full_name'], // Store full_name in session
+                'isLoggedin' => true
+            ];
+            $session->set($ses_data);
+            return redirect()->to('/seller/sellerAdmin');
         } else if (password_verify($password, $hashedPassword)) {
             // Redirect regular users to /user
             $ses_data = [
                 'id' => $data['id'],
                 'username' => $data['username'],
+                'full_name' => $data['full_name'], // Store full_name in session
                 'isLoggedin' => true
             ];
             $session->set($ses_data);
@@ -58,4 +69,5 @@ class SigninController extends BaseController
     }
 }
 
+    
 }

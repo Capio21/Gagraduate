@@ -1,0 +1,86 @@
+CRITICAL - 2024-03-15 06:26:56 --> Undefined variable $products
+in APPPATH\Views\include\shop.php on line 432.
+ 1 APPPATH\Views\include\shop.php(432): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $products', 'C:\\laragon\\www\\Testing\\app\\Views\\include\\shop.php', 432)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Testing\\app\\Views\\include\\shop.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('include/shop', [], true)
+ 5 APPPATH\Config\Routes.php(19): view('include/shop')
+ 6 SYSTEMPATH\CodeIgniter.php(868): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:39:49 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 61.
+ 1 APPPATH\Controllers\SellerController.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:39:56 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 61.
+ 1 APPPATH\Controllers\SellerController.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:40:17 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 61.
+ 1 APPPATH\Controllers\SellerController.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:41:43 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 68.
+ 1 APPPATH\Controllers\SellerController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:43:11 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 68.
+ 1 APPPATH\Controllers\SellerController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:43:24 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 68.
+ 1 APPPATH\Controllers\SellerController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:43:31 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 68.
+ 1 APPPATH\Controllers\SellerController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 06:45:34 --> Undefined variable $newName
+in APPPATH\Controllers\SellerController.php on line 68.
+ 1 APPPATH\Controllers\SellerController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $newName', 'C:\\laragon\\www\\Testing\\app\\Controllers\\SellerController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->update('11')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')
+CRITICAL - 2024-03-15 11:48:42 --> Invalid file: "seller/create.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('seller/create.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('seller/create', [], true)
+ 3 APPPATH\Controllers\SellerController.php(18): view('seller/create')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SellerController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SellerController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Testing\\public\\index.php')

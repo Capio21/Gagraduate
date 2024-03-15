@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,10 +43,6 @@
         .tmargin {
             margin-top: 15px;
         }
-
-
-        
- 
     </style>
 </head>
 
@@ -100,7 +95,6 @@
 
 
 </ul>
-                    <!-- ... other menu items ... -->
                 </ul>
             </nav>
             <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
@@ -122,115 +116,13 @@
             </div>
         </div>
     </div>
-
-    <br><br>
              <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
                 <h1 class="page-header">Seller Dashboard</h1>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Seller Dashboard</a></li>
                 </ul>
-                <!-- Include Bootstrap CSS -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-<div class="container mt-5">
-
-
-<br>
-
-<body>
-<div class="container mt-5">
-        <h1 class="mb-4">Add Product to Inventory</h1>
-        <form action="/seller/store" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="product_name">Product Name:</label>
-                <input type="text" class="form-control" id="product_name" name="product_name" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="price">Price:</label>
-                    <input type="text" class="form-control" id="price" name="price" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="stock_count">Stock Count:</label>
-                    <input type="text" class="form-control" id="stock_count" name="stock_count" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="image">Product Image:</label>
-                <input type="file" class="form-control-file" id="image" name="image" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Product</button>
-        </form>
-    </div>
-
-
-    
-</body>
-
-<br><br><br>
-    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search products..." onkeyup="searchProducts()">
-    
-    <h1>Product List</h1>
-    
-    <div class="row" id="productList">
-        <?php foreach ($products as $product): ?>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="<?= $product['image'] ?>" class="card-img-top" alt="<?= $product['product_name'] ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $product['product_name'] ?></h5>
-                        <p class="card-text"><?= $product['description'] ?></p>
-                        <p class="price">₱<?= number_format($product['price'], 2) ?></p>
-                        <p class="card-text">Stock: <?= $product['stock_count'] ?></p>
-                        <div class="action">
-                            <a href="/seller/edit/<?= $product['id'] ?>" class="btn btn-primary mr-2">Edit</a>
-                            <a href="/seller/delete/<?= $product['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
-
-<!-- Include Bootstrap JS (Optional) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-    function addToCart(productId) {
-        if (confirm('Add this product to cart?')) {
-            // You can make an AJAX request here to add the product to the cart
-            // and update the stock count accordingly
-            window.location.href = '/seller/add_to_cart/' + productId;
-        }
-    }
-
-    function searchProducts() {
-        var input, filter, productList, product, productName, i, txtValue;
-        input = document.getElementById('searchInput');
-        filter = input.value.toUpperCase();
-        productList = document.getElementById('productList');
-        product = productList.getElementsByClassName('card');
-
-        for (i = 0; i < product.length; i++) {
-            productName = product[i].getElementsByClassName('card-title')[0];
-            txtValue = productName.textContent || productName.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                product[i].style.display = "";
-            } else {
-                product[i].style.display = "none";
-            }
-        }
-    }
-</script>
+                
 </div>
 
 

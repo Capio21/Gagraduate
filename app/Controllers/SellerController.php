@@ -12,10 +12,16 @@ class SellerController extends BaseController
         $data['products'] = $model->findAll();
         return view('seller/index', $data);
     }
-
+   
     public function create()
     {
         return view('seller/create');
+      
+    }
+
+    public function sellerAdmin()
+    {
+        return view('seller/sellerAdmin');
     }
 
     public function store()
