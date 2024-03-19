@@ -4,17 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class OrdersModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
-    protected $primaryKey       = 'id';
+    protected $table            = 'orders';
+    protected $primaryKey       = 'OrderID';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['username', 'password','full_name', 'address', 'contact_number', 'date_of_birth', 'gender', 'occupation', 'token','membership_type', 'date_joined'];
-
+    protected $allowedFields = ['Username', 'Address', 'ContactNumber', 'ProductName', 'ImageURL', 'Price', 'Category','status'];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

@@ -69,8 +69,6 @@
                     <!-- Logout Modal -->
                     <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#logoutModal"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
                     <li class="nav-item"><a class="nav-link" href="/joining"  class="bi bi-box-arrow-right"></i>Joining List</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/orders"  class="bi bi-box-arrow-right"></i>Order List</a></li>
-                   
                 </ul>
             </div>
         </div>
@@ -102,7 +100,6 @@
                                 class="bi bi-gear"></i>&nbsp;Add WorkShop</a></li>
 
                     
-                    
                 
                 </ul>
                     <!-- ... other menu items ... -->
@@ -115,19 +112,41 @@
                     <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
                 </ul>
-                <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                        <div style="width: 130%;">
-    <div style="border: 1px solid #ccc; padding: 10px; width: calc(80% - 7px); display: inline-block;">
-        <canvas id="memberGraph" width="800" height="300"></canvas>
-    </div>
-    <div style="border: 1px solid #ccc; padding: 10px; width: calc(80% - 5px); display: inline-block;">
-        <canvas id="memberCountGraph" width="600" height="300"></canvas>
-    </div>
-</div>
-<p>Total Number of Members: <?php echo $totalMembers; ?></p>
+               
 
+
+                <div class="container mt-5">
+  <div id="accordion">
+    <?php foreach ($orders as $index => $order): ?>
+      <div class="card">
+        <div class="card-header" id="heading<?= $index ?>">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<?= $index ?>" aria-expanded="true" aria-controls="collapse<?= $index ?>">
+              Order ID: <?= $order['OrderID'] ?> | Username: <?= $order['Username'] ?>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" data-parent="#accordion">
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">Address: <?= $order['Address'] ?></li>
+              <li class="list-group-item">Contact Number: <?= $order['ContactNumber'] ?></li>
+              <li class="list-group-item">Product Name: <?= $order['ProductName'] ?></li>
+              <li class="list-group-item">Image URL: <?= $order['ImageURL'] ?></li>
+              <li class="list-group-item">Price: <?= $order['Price'] ?></li>
+              <li class="list-group-item">Category: <?= $order['Category'] ?></li>
+              <li class="list-group-item">Status: <?= $order['status'] ?></li>
+              <li class="list-group-item">
+                <a class="btn btn-primary btn-sm" href="/orders/edit/<?= $order['OrderID'] ?>">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/orders/delete/<?= $order['OrderID'] ?>">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>
                     </div>
                 </div>
             </main>
@@ -172,67 +191,6 @@
 </div>
 
 
-<script>
-    var dates = <?php echo json_encode($dates); ?>;
-    var counts = <?php echo json_encode(array_values($counts)); ?>;
-
-    var ctx = document.getElementById('memberGraph').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: dates,
-            datasets: [{
-                label: 'Number of Members Joined',
-                data: counts,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    var memberDates = <?php echo json_encode($dates); ?>;
-    var memberCounts = <?php echo json_encode(array_values($counts)); ?>;
-
-    var ctx2 = document.getElementById('memberCountGraph').getContext('2d');
-    var myChart2 = new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: memberDates,
-            datasets: [{
-                label: 'Number of Members Joined',
-                data: memberCounts,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Members Joined' // Y-axis label
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Date' // X-axis label
-                    }
-                }
-            }
-        }
-    });
-</script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>

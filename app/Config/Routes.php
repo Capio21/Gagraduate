@@ -15,9 +15,8 @@ $routes->get('/user', 'HomeController::index');
 
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth');
 
-$routes->get('/shop', function () {
-    return view('include/shop');
-});
+$routes->get('/shop', 'OrdersController::shop');
+
 
 $routes->get('/insert', 'AdminController::insert');
 $routes->post('/insert', 'AdminController::insert_Prod');
@@ -31,14 +30,14 @@ $routes->get('/get-products-by-category/(:num)', 'HomeController::getProductsByC
 
 $routes->get('/register', '\App\Controllers\UserController::register');
 $routes->get('/admin_register', '\App\Controllers\UserController::admin_register');
-$routes->post('/user/store', '\App\Controllers\UserController::store');
+// $routes->post('/user/store', '\App\Controllers\UserController::store');
 $routes->get('/', '\App\Controllers\SigninController::login');
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth', ['filter' => 'authGuard']);
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 
 $routes->get('/admin', 'AdminController::admin');
 $routes->get('/cart', 'CartController::cart');
-
+$routes->post('orders/store', 'OrdersController::store');
 
 
 //add to cart
@@ -50,7 +49,7 @@ $routes->get('/cart', 'CartController::cart');
 $routes->get('/members', 'Members::index');
 
 
-$routes->get('/shop', 'CartController::cart');
+//$routes->get('/shop', 'CartController::cart');
 
 
 
@@ -103,6 +102,18 @@ $routes->post('/seller/update/(:num)', 'SellerController::update/$1');
 $routes->get('/seller/delete/(:num)', 'SellerController::delete/$1');
 // In app/Config/Routes.php
 
+
+
+
+//orders
+
+$routes->get('orders', 'OrdersController::index');
+$routes->get('orders/create', 'OrdersController::create');
+$routes->post('orders/store', 'OrdersController::store');
+$routes->get('orders/edit/(:num)', 'OrdersController::edit/$1');
+$routes->post('orders/update/(:num)', 'OrdersController::update/$1');
+$routes->get('orders/delete/(:num)', 'OrdersController::delete/$1');
+$routes->match(['get','post'],'/cart', 'OrdersController::index_cart');
 
 
 

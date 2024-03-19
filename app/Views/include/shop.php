@@ -251,6 +251,10 @@
   background-color: #3e8e41;
 }
 
+
+
+
+
     </style>
 
     <body>
@@ -292,8 +296,33 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <p>Shoping Cart</p>
-
-        <ul id="cartItems"></ul>
+        <table border="1">
+      
+        <div class="row">
+            <?php foreach ($orders as $order): ?>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <h3 class="card-text">Username: <?= $order['Username']; ?></h3>
+                            <p class="card-text">Address: <?= $order['Address']; ?></p>
+                            <p class="card-text">Contact Number: <?= $order['ContactNumber']; ?></p>
+                            <p class="card-text">Product Name: <?= $order['ProductName']; ?></p>
+                            <p class="card-text">Image URL: <?= $order['ImageURL']; ?></p>
+                            <p class="card-text">Price: <?= $order['Price']; ?></p>
+                            <p class="card-text">Category: <?= $order['Category']; ?></p>
+                            <p class="card-text">Status: <?= $order['status']; ?></p>
+                            <!-- Add any other details you want to display -->
+                            
+                            <a href="/orders/delete/<?= $order['OrderID']; ?>" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    </table>
+        
     </div>
 </div>
 
@@ -312,12 +341,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="addToCartForm">
+            <!-- <form id="addToCartForm"> -->
+            <form id="addToCartForm" action="/orders/store" method="post">
             <div class="modal-body">
 
-                <p>Product Name: <span id="addToCartModalProductName" name="prodName"></span></p>
-                <p>Price: <span id="addToCartModalPrice" name="price"></span></p>
-                <img src="" id="addToCartModalImage" alt="" name="image" class="img-fluid" />
+            <p>Product Name: <input type="text" style="border:0px;" id="addToCartModalProductName" name="prodName" readonly></p>
+<p>Price: <input type="text" style="border:0px;" id="addToCartModalPrice" name="price" readonly></p>
+<img src="" id="addToCartModalImage" alt="" name="image" class="img-fluid">
+
             </div>
             <div class="modal-footer">
                 <div class="quantity-selector">
@@ -328,9 +359,27 @@
                         <button class="btn btn-light quantity-increase" onclick="increaseQuantity()">+</button>
                     </div>
                 </div>
+                <?php
+$session = session();
+$username = $session->get('username');
+$full_name = $session->get('full_name');
+$address = $session->get('address');
+$contact_number = $session->get('contact_number');
+?>
+                <input type="text" name="full_name" placeholder="full_name" id="full_name" value="<?php echo $full_name; ?>"></input>
+<input type="text" name="address" placeholder="Address" id="address" value="<?php echo $address; ?>">
+<input type="text" name="contact_number" placeholder="Contact Number" id="contact_number" value="<?php echo $contact_number; ?>">
+<input type="text" name="status" id="status" value="cart">
+
+
+
+
+                <div>
+              
+                <h1><?php echo $full_name; ?></h1>
+                </div>
             </form>
             <button type="submit" class="btn btn-primary">Add to Cart</button>
-
             </div>
         </div>
     </div>
@@ -510,10 +559,11 @@
 }
 
 function openModal(productName, price, imageUrl) {
-    document.getElementById('addToCartModalProductName',).innerText = productName;
-    document.getElementById('addToCartModalPrice').innerText = price;
+    document.getElementById('addToCartModalProductName').value = productName;
+    document.getElementById('addToCartModalPrice').value = price;
     document.getElementById('addToCartModalImage').src = imageUrl;
 }
+
 
 function openBuyModal(productName, price, imageUrl) {
     document.getElementById('buyModalProductName').innerText = productName;

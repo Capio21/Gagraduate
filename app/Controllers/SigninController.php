@@ -35,6 +35,8 @@ class SigninController extends BaseController
                 'id' => $data['id'],
                 'username' => $data['username'],
                 'full_name' => $data['full_name'], // Store full_name in session
+                'contact_number' => $data['contact_number'], // Store full_name in session
+                'address' => $data['address'], // Store full_name in session
                 'isLoggedin' => true
             ];
             $session->set($ses_data);
@@ -45,6 +47,8 @@ class SigninController extends BaseController
                 'id' => $data['id'],
                 'username' => $data['username'],
                 'full_name' => $data['full_name'], // Store full_name in session
+                'contact_number' => $data['contact_number'], // Store full_name in session
+                'address' => $data['address'], // Store full_name in session
                 'isLoggedin' => true
             ];
             $session->set($ses_data);
@@ -55,6 +59,8 @@ class SigninController extends BaseController
                 'id' => $data['id'],
                 'username' => $data['username'],
                 'full_name' => $data['full_name'], // Store full_name in session
+                'contact_number' => $data['contact_number'], // Store full_name in session
+                'address' => $data['address'], // Store full_name in session
                 'isLoggedin' => true
             ];
             $session->set($ses_data);
