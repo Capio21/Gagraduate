@@ -60,14 +60,19 @@ class Workshop extends Controller
     {
         $model = new WorkshopModel();
         $model->update($id, $this->request->getPost());
-        return redirect()->to('workshop/edit');
+        return redirect()->to('/Admin_index');
     }
 
-    public function delete($id)
-    {
+    public function delete($workshopId) {
+        // Load WorkshopModel
         $model = new WorkshopModel();
-        $model->delete($id);
-        return redirect()->to('/workshop');
+    
+        // Delete the workshop
+        $model->delete($workshopId);
+    
+        // Redirect to the index page or any other appropriate page
+        return redirect()->to(base_url('/Admin_index'));
     }
+    
    
 }

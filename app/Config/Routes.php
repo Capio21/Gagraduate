@@ -118,6 +118,16 @@ $routes->match(['get','post'],'/cart', 'OrdersController::index_cart');
 
 
 
+//documnets
+// app/Config/Routes.php
+$routes->get('/documentaries', 'Documentaries::index');
+$routes->get('/documentaries/create', 'Documentaries::create');
+$routes->post('/documentaries/store', 'Documentaries::store');
+$routes->get('/documentaries/edit/(:num)', 'Documentaries::edit/$1');
+$routes->post('/documentaries/update/(:num)', 'Documentaries::update/$1');
+$routes->get('/documentaries/delete/(:num)', 'Documentaries::delete/$1');
+
+$routes->get('/generate-report', 'Documentaries::generateReport');
 
 
 

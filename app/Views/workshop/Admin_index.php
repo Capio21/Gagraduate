@@ -131,33 +131,44 @@
                             
                         <h2 class="text-center my-4"> <a href="<?= site_url('/workshop/create') ?>" class="btn btn-primary mb-3">Create New Workshop</a> <br>
                         Workshops </h2>
+                        <br>
 
+                        
 
-    
-    <?php foreach ($workshops as $workshop): ?>
-        <div class="col-12 mb-4">
-            
-            <div class="card">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="<?= base_url($workshop['image_url']) ?>" class="card-img" alt="Workshop Image" style="max-height: 200px; object-fit: cover;">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Workshop Title: <?= $workshop['title'] ?></h5>
-                            <p class="card-text">Description: <?= $workshop['description'] ?></p>
-                            <p class="card-text">Date: <?= $workshop['date'] ?></p>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-danger" onclick="deleteWorkshop(<?= $workshop['workshop_id'] ?>)">Delete</button>
-                                <a href="<?= site_url('/workshop/edit/' . $workshop['workshop_id']) ?>" class="btn btn-warning">Edit</a>
-                            </div>
+                        <?php foreach ($workshops as $workshop): ?>
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="<?= base_url($workshop['image_url']) ?>" class="card-img" alt="Workshop Image" style="max-height: 200px; object-fit: cover;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Workshop Title: <?= $workshop['title'] ?></h5>
+                        <p class="card-text">Description: <?= $workshop['description'] ?></p>
+                        <p class="card-text">Date: <?= $workshop['date'] ?></p>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-danger" onclick="deleteWorkshop(<?= $workshop['workshop_id'] ?>)">Delete</button>
+                            <a href="<?= site_url('/workshop/edit/' . $workshop['workshop_id']) ?>" class="btn btn-warning">Edit</a>
                         </div>
+                         
                     </div>
-                    
+                    <h2 class="text-center my-4"> <a href="<?= site_url('/documentaries/create') ?>" class="btn btn-primary mb-3">Make a Documents</a>
                 </div>
             </div>
         </div>
-    <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
+
+<script>
+    function deleteWorkshop(workshopId) {
+        if (confirm('Are you sure you want to delete this workshop?')) {
+            window.location.href = '<?= site_url('/workshop/delete/') ?>' + workshopId;
+        }
+    }
+</script>
+
+
 </div>
 
 </div>

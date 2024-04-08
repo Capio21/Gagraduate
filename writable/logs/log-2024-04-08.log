@@ -1,0 +1,59 @@
+CRITICAL - 2024-04-08 01:17:17 --> Class "App\Controllers\WorkshopDocumentaryModel" not found
+in APPPATH\Controllers\WorkshopDocumentaryController.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\WorkshopDocumentaryController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkshopDocumentaryController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+ERROR - 2024-04-08 01:18:08 --> mysqli_sql_exception: Table 'prod.workshopdocumentaries' doesn't exist in C:\laragon\www\Gagraduate\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Gagraduate\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `wo...', 0)
+#1 C:\laragon\www\Gagraduate\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wo...')
+#2 C:\laragon\www\Gagraduate\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wo...')
+#3 C:\laragon\www\Gagraduate\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wo...', Array, false)
+#4 C:\laragon\www\Gagraduate\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\Gagraduate\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\Gagraduate\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\Gagraduate\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\Gagraduate\app\Controllers\WorkshopDocumentaryController.php(50): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\Gagraduate\system\CodeIgniter.php(919): App\Controllers\WorkshopDocumentaryController->store()
+#10 C:\laragon\www\Gagraduate\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkshopDocumentaryController))
+#11 C:\laragon\www\Gagraduate\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\Gagraduate\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\Gagraduate\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-04-08 01:18:08 --> Table 'prod.workshopdocumentaries' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `workshopdocumentaries` (`title`, `description`) VALUES (:title:, :description:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\WorkshopDocumentaryController.php(50): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\WorkshopDocumentaryController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WorkshopDocumentaryController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-08 01:56:24 --> Undefined variable $data
+in APPPATH\Controllers\Documentaries.php on line 46.
+ 1 APPPATH\Controllers\Documentaries.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\Gagraduate\\app\\Controllers\\Documentaries.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Documentaries->store()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentaries))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-08 02:11:44 --> Class "Dompdf\Dompdf" not found
+in APPPATH\Controllers\Documentaries.php on line 106.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Documentaries->generateReport()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentaries))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-08 02:14:42 --> Class "Dompdf\Dompdf" not found
+in APPPATH\Controllers\Documentaries.php on line 110.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Documentaries->generateReport()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentaries))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')

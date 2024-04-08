@@ -83,34 +83,31 @@
 <br>
 <div class="container">
         <h2 class="text-center my-4">Workshops</h2>
-       
         <div class="row">
-            <?php foreach ($workshops as $workshop): ?>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="<?= base_url($workshop['image_url']) ?>" class="card-img-top workshop-image" alt="Workshop Image">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $workshop['title'] ?></h5>
-                            <p class="card-text"><?= $workshop['description'] ?></p>
-                            <p class="card-text"><strong>Date:</strong> <?= $workshop['date'] ?></p>
-                            <button type="button" class="btn btn-primary btn-join"
-            data-title="<?= $workshop['title'] ?>"
-            data-description="<?= $workshop['description'] ?>"
-            data-date="<?= $workshop['date'] ?>"
-            data-toggle="modal" data-target="#exampleModalCenter">
-            Join
-        </button>
-
-
-
-    </form>
-                        </div>
-                    </div>
+    <?php foreach ($workshops as $workshop): ?>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <img src="<?= base_url($workshop['image_url']) ?>" class="card-img-top workshop-image" alt="Workshop Image">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $workshop['title'] ?></h5>
+                    <p class="card-text"><?= $workshop['description'] ?></p>
+                    <p class="card-text"><strong>Date:</strong> <?= $workshop['date'] ?></p>
+                    <?php if (!empty($workshop['additional_info'])): ?>
+                        <p class="card-text"><strong>Additional Info:</strong> <?= $workshop['additional_info'] ?></p>
+                    <?php endif; ?>
+                    <button type="button" class="btn btn-primary btn-join"
+                            data-title="<?= $workshop['title'] ?>"
+                            data-description="<?= $workshop['description'] ?>"
+                            data-date="<?= $workshop['date'] ?>"
+                            data-toggle="modal" data-target="#exampleModalCenter">
+                        Join
+                    </button>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
-    </div>
-</body>
+    <?php endforeach; ?>
+</div>
+
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
