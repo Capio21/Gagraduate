@@ -131,5 +131,18 @@ $routes->get('/generate-report', 'Documentaries::generateReport');
 
 
 
+//upload
+$routes->get('upload', 'Upload::index');
+$routes->post('upload/do_upload', 'Upload::do_upload');
+$routes->get('upload/success', 'Upload::success');
+$routes->get('upload/failure', 'Upload::failure');
+$routes->get('File', 'Upload::upload');
+
+
+
+
+
+
+
 
 

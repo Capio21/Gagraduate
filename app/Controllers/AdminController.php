@@ -180,12 +180,12 @@ public function admin()
     // Get the total number of members
     $totalMembers = count($members);
 
-    // Pass data to the view including total members count
-    return view('admin', ['dates' => $data['dates'], 'counts' => $data['counts'], 'totalMembers' => $totalMembers]);
+    // Get the number of unique dates
+    $uniqueDates = count($data['dates']);
 
-
+    // Pass data to the view including total members count and unique dates count
+    return view('admin', ['dates' => $data['dates'], 'counts' => $data['counts'], 'totalMembers' => $totalMembers, 'uniqueDates' => $uniqueDates]);
 }
-
 
 
 

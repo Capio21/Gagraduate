@@ -70,6 +70,26 @@
                     <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#logoutModal"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
                     <li class="nav-item"><a class="nav-link" href="/joining"  class="bi bi-box-arrow-right"></i>Joining List</a></li>
                     <li class="nav-item"><a class="nav-link" href="/orders"  class="bi bi-box-arrow-right"></i>Order List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/documentaries"  class="bi bi-box-arrow-right"></i>Documents</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="/upload"  class="bi bi-box-arrow-right"></i>  <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" fill="currentColor" class="bi bi-upload" viewBox="0 0 20 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+</svg></a></li>
+                   
+                    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+
+
                    
                 </ul>
             </div>
@@ -169,7 +189,10 @@
       </div>
     </div>
   </div>
-</div>
+
+
+  
+
 
 
 <script>
@@ -232,6 +255,7 @@
             }
         }
     });
+    
 </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

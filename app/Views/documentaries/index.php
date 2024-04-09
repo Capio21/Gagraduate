@@ -15,9 +15,11 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="mb-4">Documentaries</h2>
-        <a href="/documentaries/create" class="btn btn-primary mb-4">Add New Documentary</a>
-        <a href="/generate-report" class="btn btn-success mb-4">Generate Report</a> <!-- Add this button -->
+        <h2 class="mb-4">Mulawin Coconut Farmers Cooperative</h2>
+        
+        <a href="/generate-report" class="btn btn-success mb-4">Generate Report</a> 
+        
+<!-- Add this button -->
         <div id="accordion">
             <?php foreach ($documentaries as $key => $documentary): ?>
                 <div class="card mb-2">
@@ -31,8 +33,8 @@
 
                     <div id="collapse<?= $key ?>" class="collapse" aria-labelledby="heading<?= $key ?>" data-parent="#accordion">
                         <div class="card-body">
-                            <p><strong>Description:</strong> <?= $documentary['description']; ?></p>
-                            <p><strong>Date:</strong> <?= $documentary['date']; ?></p>
+                            <p><strong></strong> <?= $documentary['description']; ?></p>
+                            <p><strong></strong> <?= $documentary['date']; ?></p>
                             <?php if (!empty($documentary['image'])): ?>
                                 <div class="text-center">
                                     <img src="<?= base_url('uploads/' . $documentary['image']); ?>" alt="<?= $documentary['title']; ?>" class="img-fluid rounded mx-auto d-block" style="max-width: 100%; height: auto;">

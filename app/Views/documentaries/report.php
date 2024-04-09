@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="text-center mb-4">Montly Report</h2>
+        <h2 class="text-center mb-4">MUCOFACO Montly Report</h2>
         <table class="table">
             <thead>
                 <tr>

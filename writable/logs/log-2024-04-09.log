@@ -1,0 +1,56 @@
+CRITICAL - 2024-04-09 16:05:05 --> Invalid file: "upload_success.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('upload_success.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('upload_success', [], true)
+ 3 APPPATH\Controllers\Upload.php(38): view('upload_success')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Upload->success()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Upload))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-09 17:17:07 --> Undefined variable $totalMembers
+in APPPATH\Views\admin.php on line 145.
+ 1 APPPATH\Views\admin.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMembers', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php', 145)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin', [], true)
+ 5 APPPATH\Controllers\Upload.php(18): view('admin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Upload->upload()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Upload))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-09 17:17:10 --> Undefined variable $totalMembers
+in APPPATH\Views\admin.php on line 145.
+ 1 APPPATH\Views\admin.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMembers', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php', 145)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin', [], true)
+ 5 APPPATH\Controllers\Upload.php(18): view('admin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Upload->upload()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Upload))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-09 17:21:42 --> Undefined variable $totalMembers
+in APPPATH\Views\admin.php on line 145.
+ 1 APPPATH\Views\admin.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMembers', 'C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php', 145)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\Gagraduate\\app\\Views\\admin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin', [], true)
+ 5 APPPATH\Controllers\Upload.php(18): view('admin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Upload->upload()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Upload))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
+CRITICAL - 2024-04-09 17:29:47 --> Invalid file: "Uploads/upload_form.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Uploads/upload_form.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Uploads/upload_form', [], true)
+ 3 APPPATH\Controllers\Upload.php(12): view('Uploads/upload_form')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Upload->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Upload))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Gagraduate\\public\\index.php')
