@@ -44,10 +44,13 @@ class Autoload extends AutoloadConfig
      * @var array<string, array<int, string>|string>
      * @phpstan-var array<string, string|list<string>>
      */
-    public $psr4 = [
-        APP_NAMESPACE => APPPATH, // For custom app namespace
+    public$psr4 = [
         'Config'      => APPPATH . 'Config',
+        APP_NAMESPACE => APPPATH,
+        'App'         => APPPATH,
+        'Myth\Auth'   => APPPATH . 'ThirdParty/codeigniter4-authentication-jwt/src',
     ];
+    
 
     /**
      * -------------------------------------------------------------------

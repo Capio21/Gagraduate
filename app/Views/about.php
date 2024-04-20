@@ -108,27 +108,29 @@ $full_name = $session->get('full_name');
 
 
 </style>
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
+    <body>
 
-    <!-- Navbar start -->
-    <div class="container-fluid fixed-top">
-        <div class="container topbar bg-primary d-none d-lg-block">
-            <div class="d-flex justify-content-between">
-                
-            </div>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
         </div>
-        <div class="container px-0">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="/Landing" class="navbar-brand"><h1 class="text-primary display-6">MUCOFACO</h1></a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+        <!-- Spinner End -->
+
+
+        <!-- Navbar start -->
+        <div class="container-fluid fixed-top">
+            <div class="container topbar bg-primary d-none d-lg-block">
+                <div class="d-flex justify-content-between">
+                   
+                </div>
+            </div>
+            <div class="container px-0">
+                <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                    <a href="/Landing" class="navbar-brand"><h1 class="text-primary display-6">MUCOFACO</h1></a>
+                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                     <a href="/user" class="nav-item nav-link active">Home</a>
                             <a href="/shop" class="nav-item nav-link">Shop</a>
@@ -140,39 +142,63 @@ $full_name = $session->get('full_name');
                             <a href="/about" class="nav-item nav-link">About</a>
                             <a href="/reports" class="nav-item nav-link">Reports</a>
                             <a href="/" class="nav-item nav-link">Sign-out</a>
-                    </div>
-                    <div></div>
-                    <!-- Profile button -->
-                    <button class="btn btn-primary rounded-circle" id="profileButton" type="button" style="width: 50px; height: 50px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 15 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                        </svg>
-                    </button>
-                    <!-- Offcanvas section -->
-                    <div class="offcanvas offcanvas-end d-flex align-items-center justify-content-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-content">
-                            <div class="offcanvas-header"></div>
-                            <div class="offcanvas-body">
-                                <!-- Profile details content -->
-                                <div class="profile-details">
-                                    <div class="profile-header">
-                                        <h1>Welcome, <?php echo $full_name; ?></h1>
-                                        <p><?php echo $username; ?></p>
-                                        <!-- Logout Button -->
-                                    </div>
-                                </div>
-                                <!-- Logout Modal -->
-                                <!-- Other content of user dashboard -->
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+                       
+<div></div>
+<!-- Modal -->
+<!-- Bootstrap button with Font Awesome icon -->
+<!-- Profile button -->
+<!-- Profile button as an image button -->
+<button class="btn btn-primary rounded-circle" id="profileButton" type="button" style="width: 50px; height: 50px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 15 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+    </svg>
+</button>
+
+
+
+
+
+
+<!-- Offcanvas section -->
+<div class="offcanvas offcanvas-end d-flex align-items-center justify-content-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-content">
+    <div class="offcanvas-header">
+
+      
     </div>
-    <!-- Navbar End -->
-    <script>
+    <div class="offcanvas-body">
+   <!-- Profile details content -->
+<div class="profile-details">
+    <div class="profile-header">
+        <h1>Welcome, <?php echo $full_name; ?></h1>
+        <p><?php echo $username; ?></p>
+        <!-- Logout Button -->
+        
+    </div>
+</div>
+
+<!-- Logout Modal -->
+
+
+
+<!-- Logout Modal -->
+
+
+<!-- Logout Modal -->
+
+
+
+       
+        <!-- Other content of user dashboard -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
     document.getElementById('profileButton').addEventListener('click', function () {
         var offcanvasElement = document.getElementById('offcanvasRight');
         var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
@@ -185,37 +211,62 @@ $full_name = $session->get('full_name');
 
 
 </script>
-    <!-- Hero Start -->
-    <div class="container-fluid py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-12 col-lg-7">
-                    <h4 class="mb-3 text-secondary">Mulawin Coconut Farmers Coop.</h4>
-                    <h1 class="mb-5 display-3 text-primary">Workshop and Products</h1>
-                </div>
-                <a class="button" href="https://www.facebook.com/messages/t/61550955003982"> 
-                    <i class="fab fa-facebook-messenger icon"></i>
-                    Message Us
-                </a>
+
+
+
+
+
+                    </div>
+                </nav>
             </div>
         </div>
-    </div>
-    <!-- Hero End -->
+        <!-- Navbar End -->
 
-    <div >
-    <div class="container">
-    
+       
+        <!-- Modal Search Start -->
+      
+        <!-- Modal Search End -->
+
+
+        <!-- Hero Start -->
+        <div class="container-fluid py-5 mb-5 hero-header">
+        <div class="container py-5" style="height:50px;">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7" style="position:absolute;">
+                <br><br><br><br>
+                    <h4 class="mb-3 text-secondary">Explore Our Website</h4>
+                    <h1 class="mb-5 display-3 text-primary">About Us</h1>
+                </div>
+                </div>
+                </div>
+    </div>
+                    
+                    
+                  
+                    <div class="container mt-5">
+
+    <div class="row">
+        <!-- Contact Information -->
+        <div class="col-md-6">
+           
+          
+        </div>
+        <!-- Google Maps -->
+       
+    </div>
 </div>
 
+        </div>
+        <!-- Hero End -->
+       
+        <!-- Featurs Section Start -->
+        
 
+        
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-
-    </div>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-
- 
+        
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

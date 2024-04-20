@@ -9,6 +9,10 @@ use CodeIgniter\Router\RouteCollection;
 
 
 $routes->get('/user', 'HomeController::index');
+$routes->get('user/edit/(:num)', 'UserController::edit/$1');
+$routes->post('user/update/(:num)', 'UserController::update/$1');
+$routes->post('user/delete/(:num)', 'UserController::delete/$1');
+
 
 
 
@@ -19,6 +23,9 @@ $routes->get('/shop', 'OrdersController::shop');
 
 
 $routes->get('/insert', 'AdminController::insert');
+$routes->get('/reports', 'AdminController::reports');
+$routes->get('/contact', 'AdminController::contact');
+$routes->get('/about', 'AdminController::about');
 $routes->post('/insert', 'AdminController::insert_Prod');
 $routes->delete('/delete/(:num)', 'AdminController::delete/$1');
 $routes->get('/get-product/(:num)', 'AdminController::getProduct/$1');
@@ -30,7 +37,7 @@ $routes->get('/get-products-by-category/(:num)', 'HomeController::getProductsByC
 
 $routes->get('/register', '\App\Controllers\UserController::register');
 $routes->get('/admin_register', '\App\Controllers\UserController::admin_register');
-// $routes->post('/user/store', '\App\Controllers\UserController::store');
+$routes->post('/user/store', '\App\Controllers\UserController::store');
 $routes->get('/', '\App\Controllers\SigninController::login');
 $routes->post('/signin/loginAuth', '\App\Controllers\SigninController::loginAuth', ['filter' => 'authGuard']);
 $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
@@ -120,6 +127,8 @@ $routes->match(['get','post'],'/cart', 'OrdersController::index_cart');
 
 //documnets
 // app/Config/Routes.php
+
+
 $routes->get('/documentaries', 'Documentaries::index');
 $routes->get('/documentaries/create', 'Documentaries::create');
 $routes->post('/documentaries/store', 'Documentaries::store');

@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>CodeIgniter Login with Username/Password Example</title>
+    <title>E-commerce System Login</title>
 
     <style>
         body {
-            background-color: #007bff; /* Blue background color */
+            /* Remove the background-color property */
+            background-image: url('cococo.jpg'); /* Replace 'background.jpg' with the path to your image */
+            background-size: cover; /* Make sure the background image covers the entire viewport */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -16,9 +18,10 @@
         }
 
         .form-container {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.9); /* White background color with transparency */
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Box shadow for depth */
         }
 
         .login-logo {
@@ -27,7 +30,7 @@
         }
 
         .login-logo img {
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
         }
     </style>
@@ -38,9 +41,9 @@
             <div class="col-md-6">
                 <div class="form-container">
                     <div class="login-logo">
-                        <img src="logo.png" alt="Logo">
+                        <img src="logo.png" alt="E-commerce Logo">
                     </div>
-                    <h2 class="text-center">Login</h2>
+                    <h2 class="text-center mb-4">LOG IN TO YOUR ACCOUNT</h2>
                     <?php if(session()->getFlashdata('msg')): ?>
                         <div class="alert alert-warning">
                             <?= session()->getFlashdata('msg') ?>
@@ -48,23 +51,36 @@
                     <?php endif; ?>
                     <form action="<?php echo base_url(); ?>/signin/loginAuth" method="post">
                         <div class="mb-3">
-                            <input type="text" name="username" placeholder="Username" value="<?= set_value('username') ?>" class="form-control" required>
+                            <input type="text" name="username" placeholder="Username or Email" value="<?= set_value('username') ?>" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <input type="password" name="password" placeholder="Password" class="form-control" required inputmode="none">
-                        </div>
+    <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+    <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+</div>
+                        
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success">Login</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Log In</button>
                         </div>
                     </form>
 
                     <!-- Add the Register Account button -->
                     <div class="text-center mt-3">
-                        <a href="/register" class="btn btn-primary">Register Account</a>
+                        <p>Don't have an account yet? <a href="/register">Sign up here</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>
 </body>
 </html>

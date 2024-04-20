@@ -62,11 +62,16 @@
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="/user" class="nav-item nav-link active">Home</a>
+                        <a href="/user" class="nav-item nav-link active">Home</a>
                             <a href="/shop" class="nav-item nav-link">Shop</a>
                             <a href="workshop" class="nav-item nav-link">Workshop</a>
                            
                             <a href="/event" class="nav-item nav-link">Events</a>
+                            
+                            <a href="/contact" class="nav-item nav-link">Contact</a>
+                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href="/reports" class="nav-item nav-link">Reports</a>
+                            <a href="/" class="nav-item nav-link">Sign-out</a>
                         </div>
                        
                     </div>
@@ -75,14 +80,22 @@
         </div>
         <!-- Navbar End -->
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+    <div class="container-fluid py-5 mb-5 hero-header">
+        <div class="container py-5" style="height:50px;">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7" style="position:absolute;">
+                <br><br><br><br>
+                    <h4 class="mb-3 text-secondary">TRAINING/WORKSHOP</h4>
+                    <h1 class="mb-5 display-3 text-primary">WORKSHOP UPDATE</h1>
+                </div>
+                </div>
+                </div>
+    </div>
 <div class="container">
-        <h2 class="text-center my-4">Workshops</h2>
+       
         <div class="row">
     <?php foreach ($workshops as $workshop): ?>
         <div class="col-md-6 col-lg-4 mb-4">

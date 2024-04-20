@@ -63,7 +63,7 @@ class OrdersController extends Controller
         $ordersModel = new OrdersModel();
         $ordersModel->update($id, $this->request->getPost());
 
-        return redirect()->to('/shop');
+        return redirect()->to('/orders');
     }
 
     public function delete($id)

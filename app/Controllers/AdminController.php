@@ -7,9 +7,24 @@ use App\Models\CategoryModel;
 use App\Controllers\BaseController;
 use App\Models\UserModel;
 use App\Models\MemberModel;
+use App\Models\DocumentaryModel;
 
 class AdminController extends BaseController
 {
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function about()
+    {
+        return view('about');
+    }
+    public function reports()
+    {
+        $documentaryModel = new DocumentaryModel();
+        $data['documentaries'] = $documentaryModel->findAll();
+        return view('reports',$data);
+    }
     public function insert()
     {
         $categoryModel = new CategoryModel();

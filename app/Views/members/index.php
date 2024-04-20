@@ -109,40 +109,43 @@
                 <br>
 
                 <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            
-                            <th>Username</th>
-                            <th>Full Name</th>
-                            <th>Address</th>
-                            <th>Contact Number</th>
-                            <th>Date of Birth</th>
-                            <th>Gender</th>
-                            <th>Occupation</th>
-                            <th>Membership Type</th>
-                            <th>Date Joined</th>
-                            
-                        </tr>
-                    </thead>
-                    <!-- Assuming $members is an array of arrays -->
-                    <?php foreach ($members as $member): ?>
-                    <tr>
-                        
-                        <td><?= $member['username'] ?></td>
-                        <td><?= $member['full_name'] ?></td>
-                        <td><?= $member['address'] ?></td>
-                        <td><?= $member['contact_number'] ?></td>
-                        <td><?= $member['date_of_birth'] ?></td>
-                        <td><?= $member['gender'] ?></td>
-                        <td><?= $member['occupation'] ?></td>
-                        <td><?= $member['membership_type'] ?></td>
-                        <td><?= $member['date_joined'] ?></td>
-                        <!-- Add other fields as needed -->
-                        
-                    </tr>
-                    <?php endforeach; ?>
-                </table>
-                
+    <thead class="thead-dark">
+        <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Occupation</th>
+            <th>Membership Type</th>
+            <th>Date Joined</th>
+            <th>Action</th> <!-- New column for actions -->
+        </tr>
+    </thead>
+    <?php foreach ($members as $member): ?>
+    <tr>
+        <td><?= $member['username'] ?></td>
+        <td><?= $member['full_name'] ?></td>
+        <td><?= $member['address'] ?></td>
+        <td><?= $member['contact_number'] ?></td>
+        <td><?= $member['date_of_birth'] ?></td>
+        <td><?= $member['gender'] ?></td>
+        <td><?= $member['occupation'] ?></td>
+        <td><?= $member['membership_type'] ?></td>
+        <td><?= $member['date_joined'] ?></td>
+        <td>
+            <!-- Edit button -->
+            <a href="<?= base_url('user/edit/' . $member['id']) ?>" class="btn btn-primary btn-sm">Edit</a>
+            <!-- Delete button -->
+            <form action="<?= base_url('user/delete/' . $member['id']) ?>" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+            </form>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
                 <!-- Logout Modal -->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
                     aria-hidden="true">

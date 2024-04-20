@@ -30,6 +30,18 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <style>
+#productContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-list-item {
+    flex: 0 0 calc(25% - 20px); /* Set width for each product item and consider margin */
+    margin: 10px; /* Add margin between items */
+    text-align: center; /* Center align the content */
+}
+
         .category-buttons {
             display: flex;
             justify-content: center;
@@ -62,14 +74,7 @@
             flex-wrap: wrap;
         }
 
-        .product-list-item {
-            width: calc(33.33% - 10px);
-            margin-right: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd; /* Add a border for clarity */
-            padding: 10px;
-            text-align: center;
-        }
+       
 
         .product-button {
             background-color: #009933;
@@ -198,7 +203,7 @@
 }
 
 //dropdown
-<style>
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #4CAF50;
@@ -257,7 +262,7 @@
 
     </style>
 
-    <body>
+    <body style="height:1000px;">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -275,30 +280,39 @@
             </div>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="/Landing" class="navbar-brand"><h1 class="text-primary display-6">MUCO SHOP</h1></a>
+                    <a href="/Landing" class="navbar-brand"><h1 class="text-primary display-6">MUCO FACO</h1></a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                            <a href="/user" class="nav-item nav-link active">Home</a>
+                    <a href="/user" class="nav-item nav-link active">Home</a>
                             <a href="/shop" class="nav-item nav-link">Shop</a>
-                            
                             <a href="workshop" class="nav-item nav-link">Workshop</a>
                            
                             <a href="/event" class="nav-item nav-link">Events</a>
+                            
+                            <a href="/contact" class="nav-item nav-link">Contact</a>
+                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href="/reports" class="nav-item nav-link">Reports</a>
+                            <a href="/" class="nav-item nav-link">Sign-out</a>
                         </div>
                         <a href="#" id="openModal" class="position-relative me-4 my-auto">
     <i class="fa fa-shopping-bag fa-2x"></i>
 </a>
+
 
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <p>Shoping Cart</p>
         <table border="1">
-      
+
+
+        <div class="container-fluid py-5 mb-5 hero-header">
+       
         <div class="row">
+        
             <?php foreach ($orders as $order): ?>
                 <div class="col-md-6 mb-4">
                     <div class="card">
@@ -482,63 +496,54 @@ $contact_number = $session->get('contact_number');
         </div>
     </div>
     
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
-
         
-        <div class="category-container">
-        <div class="category-buttons">
-            <button id="womenButton" class="category-button">Plant</button>
-            <button id="accessoriesButton" class="category-button">Animal</button>
-            <button id="mensButton" class="category-button">Product</button>
-        </div>
 
-        <div id="productContainer" class="product-list"></div>
-        </div>
+
+    <div class="container-fluid py-5 mb-5 hero-header">
+        <div class="container py-5" style="height:50px;">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7" style="position:absolute;">
+                <br><br><br><br>
+                    <h4 class="mb-3 text-secondary">SHOP</h4>
+                    <h1 class="mb-5 display-3 text-primary">MUCO-SHOP</h1>
+                </div>
+                </div>
+                </div>
     </div>
 
-    <!-- Inside your <script> tag or external JavaScript file -->
-
+        
+    <div class="category-container">
+    <div class="category-buttons">
+        <button id="allButton" class="category-button">All</button>
+        <button id="womenButton" class="category-button">Plant</button>
+        <button id="accessoriesButton" class="category-button">Animal</button>
+        <button id="mensButton" class="category-button">Product</button>
+    </div>
+    <div id="productContainer" class="product-list">
+        <!-- Product items will be dynamically added here -->
+    </div>
+</div>
 
 
     <script>
-        const womenButton = document.getElementById('womenButton');
-        const accessoriesButton = document.getElementById('accessoriesButton');
-        const mensButton = document.getElementById('mensButton');
+         const allButton = document.getElementById('allButton');
+const womenButton = document.getElementById('womenButton');
+const accessoriesButton = document.getElementById('accessoriesButton');
+const mensButton = document.getElementById('mensButton');
+const productContainer = document.getElementById('productContainer');
 
-        const productContainer = document.getElementById('productContainer');
+function hideOtherContainers() {
+    productContainer.innerHTML = '';
+}
 
-        function hideOtherContainers() {
-            productContainer.innerHTML = '';
-        }
 
-        womenButton.addEventListener('click', () => {
-            hideOtherContainers();
-            loadAndDisplayCategory(2, productContainer);
-        });
 
-        accessoriesButton.addEventListener('click', () => {
-            hideOtherContainers();
-            loadAndDisplayCategory(3, productContainer);
-        });
 
-        mensButton.addEventListener('click', () => {
-            hideOtherContainers();
-            loadAndDisplayCategory(4, productContainer);
-        });
 
-        function loadAndDisplayCategory(categoryId, container) {
-    // Use AJAX to fetch records based on categoryId and update the container
+function loadAndDisplayCategory(categoryId, container) {
     fetch(`/get-products-by-category/${categoryId}`)
         .then(response => response.json())
         .then(products => {
-            // Loop through the products and add them to the list
             products.forEach(product => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('product-list-item');
@@ -550,13 +555,33 @@ $contact_number = $session->get('contact_number');
                     <button class="product-button" data-toggle="modal" data-target="#buyModal" onclick="openBuyModal('${product.product_name}', '${product.price}', '${product.image_url}')">Buy Now</button>
                 `;
                 container.appendChild(productDiv);
-            })
+            });
         })
         .catch(error => {
             console.error(error);
             container.innerHTML = 'Failed to load products.';
         });
 }
+
+allButton.addEventListener('click', () => {
+    hideOtherContainers();
+    loadAndDisplayCategory([2, 3, 4], productContainer);
+});
+
+womenButton.addEventListener('click', () => {
+    hideOtherContainers();
+    loadAndDisplayCategory(2, productContainer);
+});
+
+accessoriesButton.addEventListener('click', () => {
+    hideOtherContainers();
+    loadAndDisplayCategory(3, productContainer);
+});
+
+mensButton.addEventListener('click', () => {
+    hideOtherContainers();
+    loadAndDisplayCategory(4, productContainer);
+});
 
 function openModal(productName, price, imageUrl) {
     document.getElementById('addToCartModalProductName').value = productName;

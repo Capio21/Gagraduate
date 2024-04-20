@@ -7,18 +7,22 @@ use App\Models\CategoryModel;
 use App\Models\ProductModel;
 use App\Models\UserModel;
 use App\Models\MemberModel;
+use App\Models\DocumentaryModel;
 class HomeController extends BaseController
 {
 
- public function index()
- {
-        $categoryModel = new CategoryModel();
-        $data['categories'] = $categoryModel->findAll();
 
-        // No need to retrieve all products here
-
-        return view('template/index', $data);
-      }
+  public function index()
+  {
+      $categoryModel = new CategoryModel();
+      $documentaryModel = new DocumentaryModel();
+  
+      $data['categories'] = $categoryModel->findAll();
+      $data['documentaries'] = $documentaryModel->findAll();
+  
+      return view('template/index', $data);
+    }
+  
 
     // Add a new method to fetch products by category
     public function getProductsByCategory($categoryId)

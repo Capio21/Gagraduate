@@ -1,23 +1,302 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uploaded Files</title>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.24.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+
+
+body {
+            font-family: Arial, sans-serif;
+        }
+
+        .file-folder {
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .file-folder h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .file-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            margin-bottom: 10px;
+        }
+
+        .file-list li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .file-list li a:hover {
+            color: #007bff;
+        }
+
+        .folder-logo {
+            width: 50px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px; /* Center the folder logo and add space below */
+        }
+
+
+
+        body {
+            padding-top: 80px;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 220px;
+            border: none;
+            border-radius: 0;
+            overflow-y: auto;
+            background-color: #222;
+            bottom: 0;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        .side-bar li a {
+            color: #eee;
+            width: 220px;
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .side-bar li a:hover,
+        .side-bar li a:focus {
+            background-color: #333;
+        }
+
+        .tmargin {
+            margin-top: 15px;
+        }
+        .file-folder {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.folder-logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Adjust size as needed */
+}
+
+.file-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.file-item {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.file-name {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    </style>
 </head>
+
 <body>
-    <h1>Uploaded Files</h1>
-    <?php if (!empty($uploads)): ?>
-        <ul>
-            <?php foreach ($uploads as $upload): ?>
-                <li>
-                    <a href="<?= base_url($upload['file_path']) ?>" target="_blank"><?= $upload['file_name'] ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>No files uploaded yet.</p>
-    <?php endif; ?>
-   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+                   
+                    
+
+
+<!-- Your HTML content -->
+<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#adminWelcomeModal"><i class="bi bi-person"></i>&nbsp;Hello Admin</a></li>
+
+
+
+
+                    <li class="nav-item active"><a class="nav-link" title="View Website" href="#"><i class="bi bi-globe"></i></a></li>
+                    <!-- Logout Modal -->
+                    <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#logoutModal"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/joining"  class="bi bi-box-arrow-right"></i>Joining List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/orders"  class="bi bi-box-arrow-right"></i>Order List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/documentaries"  class="bi bi-box-arrow-right"></i>Documents</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="/upload"  class="bi bi-box-arrow-right"></i>  <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" fill="currentColor" class="bi bi-upload" viewBox="0 0 20 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+</svg></a></li>
+                   
+                    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+
+
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3">
+                <div class="container-fluid tmargin">
+                    <div class="input-group">
+                        <button class="btn btn-default"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <ul class="nav flex-column side-bar">
+
+                    <li class="nav-item side-bar tmargin"><a class="nav-link" href="/admin"><i
+                                class="bi bi-house"></i>&nbsp;Dashboard</a></li>
+                    <li class="nav-item side-bar"><a class="nav-link" href="/members"><i
+                                class="bi bi-flag"></i>&nbsp;Member Master List </a></li>
+                    <li class="nav-item side-bar"><a class="nav-link" href="/insert"><i
+                                class="bi bi-star"></i>&nbsp;Add Product</a></li>
+                    <li class="nav-item side-bar"><a class="nav-link" href="create"><i
+                                class="bi bi-person-circle"></i>&nbsp;Add Events</a></li>
+                    <li class="nav-item side-bar"><a class="nav-link" href="admin_register"><i
+                                class="bi bi-person-check"></i>&nbsp;Register a User/Member</a></li>           
+
+                    <li class="nav-item side-bar"><a class="nav-link" href="Admin_index"><i
+                                class="bi bi-gear"></i>&nbsp;Add WorkShop</a></li>
+
+                    
+                    
+                
+                </ul>
+                    <!-- ... other menu items ... -->
+                </ul>
+            </nav>
+
+             <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 animated bounce" style="margin-right:110px;">
+                <h1 class="page-header">Dashboard</h1>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><i class="bi bi-house-door"></i>&nbsp;Home</li>
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-list"></i>Dashboard</a></li>
+                </ul>
+                <div class="container mt-5" style="max-width: 1200px;"> <!-- Adjust max-width as needed -->
+    <div class="row justify-content-center">
+        <div class="col-lg-10"> <!-- Adjust column size as needed -->
+            <div class="file-folder">
+                <img src="logo.png" alt="Folder Logo" class="folder-logo">
+                <h1 class="text-center">Uploaded Files</h1>
+                <?php if (!empty($uploads)): ?>
+                    <div class="row file-row">
+                        <?php foreach ($uploads as $upload): ?>
+                            <div class="col-md-6"> <!-- Adjust column size as needed -->
+                                <div class="file-item">
+                                    <button class="file-button" onclick="navigateTo('/File')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                                            <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+                                        </svg>
+                                        <a href="<?= base_url($upload['file_path']) ?>" target="_blank" class="file-name"><?= $upload['file_name'] ?></a>
+                                    </button>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php else: ?>
+                    <p>No files uploaded yet.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="/" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="adminWelcomeModal" tabindex="-1" aria-labelledby="adminWelcomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="adminWelcomeModalLabel">Welcome, Admin!</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Hello Admin, welcome to our website! Thank you for visiting.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
